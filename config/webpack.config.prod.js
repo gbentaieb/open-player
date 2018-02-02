@@ -73,6 +73,7 @@ module.exports = {
       path
         .relative(paths.appSrc, info.absoluteResourcePath)
         .replace(/\\/g, '/'),
+    library: 'OpenPlayer',
   },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
@@ -236,7 +237,7 @@ module.exports = {
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
       inject: true,
-      template: paths.appHtml,
+      template: paths.demoHtml,
       minify: {
         removeComments: true,
         collapseWhitespace: true,

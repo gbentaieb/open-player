@@ -1,6 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+class OpenPlayer {
+  static test = 2;
+};
 
-ReactDOM.render(<App />, document.getElementById('root'));
+module.exports = OpenPlayer;
