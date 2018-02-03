@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { List, ListItem } from "material-ui/List";
+import { List, ListItem } from 'material-ui/List';
 import AppBar from 'material-ui/AppBar';
 
 class Header extends Component {
@@ -16,11 +16,11 @@ class Header extends Component {
   }
 
   componentDidMount() {
-    document.addEventListener("mousedown", this.handleClickOutside);
+    document.addEventListener('mousedown', this.handleClickOutside);
   }
 
   componentWillUnmount() {
-    document.removeEventListener("mousedown", this.handleClickOutside);
+    document.removeEventListener('mousedown', this.handleClickOutside);
   }
 
   /**
@@ -43,7 +43,7 @@ class Header extends Component {
     return (
       <div className="SidePanel" ref={this.setWrapperRef}>
         <AppBar
-          title={'API'}
+          title="API"
           showMenuIconButton={false}
         />
         <List>
