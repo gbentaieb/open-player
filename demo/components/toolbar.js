@@ -43,7 +43,7 @@ class Header extends Component {
               {menuItems}
             </DropDownMenu>
             <ToolbarSeparator />
-            <RaisedButton label='Load Video' primary={true} />
+            <RaisedButton label='Load' primary={true} />
           </ToolbarGroup>
         </Toolbar>
         <br />
