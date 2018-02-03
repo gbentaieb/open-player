@@ -6,7 +6,7 @@ import { Toolbar, ToolbarGroup, ToolbarSeparator } from 'material-ui/Toolbar';
 import TextField from 'material-ui/TextField';
 import presets from '../../presets';
 
-class Header extends Component {
+class ToolBar extends Component {
   state = {
     value: presets[1].value,
   }
@@ -34,7 +34,7 @@ class Header extends Component {
         </Toolbar>
         <br />
         { !this.state.value &&
-          <div style={{ margin: '10px', 'margin-top': '0px' }}>
+          <div style={{ margin: '10px', marginTop: '0px' }}>
             <TextField floatingLabelText="Content URL" fullWidth />
           </div>
         }
@@ -43,4 +43,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default ToolBar;

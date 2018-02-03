@@ -24,7 +24,7 @@ class Header extends Component {
           iconClassNameRight="muidocs-icon-navigation-expand-more"
           onLeftIconButtonClick={this.onLeftIconButtonClick}
         />
-        <Drawer width={200} open={this.state.isBurgerOpen} >
+        <Drawer open={this.state.isBurgerOpen} >
           <SidePanel onClickOutside={this.closeBurger} />
         </Drawer>
       </div>

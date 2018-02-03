@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { List, ListItem } from 'material-ui/List';
 import AppBar from 'material-ui/AppBar';
 
-class Header extends Component {
+class SidePanel extends Component {
   static propTypes = {
     onClickOutside: PropTypes.func.isRequired,
   };
@@ -23,16 +23,10 @@ class Header extends Component {
     document.removeEventListener('mousedown', this.handleClickOutside);
   }
 
-  /**
-   * Set the wrapper ref
-   */
   setWrapperRef(node) {
     this.wrapperRef = node;
   }
 
-  /**
-   * Alert if clicked on outside of element
-   */
   handleClickOutside(event) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
       this.props.onClickOutside();
@@ -57,4 +51,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default SidePanel;

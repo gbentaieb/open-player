@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header > Snapshot 1`] = `
+<div
+  className="Header"
+>
+  <AppBar
+    iconClassNameRight="muidocs-icon-navigation-expand-more"
+    onLeftIconButtonClick={[Function]}
+    showMenuIconButton={true}
+    title="Open Player Demo"
+    zDepth={1}
+  />
+  <Drawer
+    disableSwipeToOpen={false}
+    docked={true}
+    open={false}
+    openSecondary={false}
+    swipeAreaWidth={30}
+    width={null}
+    zDepth={2}
+  >
+    <SidePanel
+      onClickOutside={[Function]}
+    />
+  </Drawer>
+</div>
+`;

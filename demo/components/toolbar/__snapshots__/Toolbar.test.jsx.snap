@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toolbar > Snapshot 1`] = `
+<div
+  className="Toolbar"
+>
+  <Toolbar
+    noGutter={false}
+  >
+    <ToolbarGroup
+      firstChild={true}
+      lastChild={false}
+      style={
+        Object {
+          "margin": 0,
+          "width": "100%",
+        }
+      }
+    >
+      <DropDownMenu
+        anchorOrigin={
+          Object {
+            "horizontal": "left",
+            "vertical": "top",
+          }
+        }
+        animated={true}
+        autoWidth={true}
+        disabled={false}
+        iconButton={<NavigationArrowDropDown />}
+        maxHeight={500}
+        multiple={false}
+        onChange={[Function]}
+        openImmediately={false}
+        value="http://www.test.com/test.mp4"
+      >
+        <MenuItem
+          anchorOrigin={
+            Object {
+              "horizontal": "right",
+              "vertical": "top",
+            }
+          }
+          checked={false}
+          desktop={false}
+          disabled={false}
+          focusState="none"
+          insetChildren={false}
+          key="0"
+          primaryText="Custom Url"
+          targetOrigin={
+            Object {
+              "horizontal": "left",
+              "vertical": "top",
+            }
+          }
+          value={null}
+        />
+        <MenuItem
+          anchorOrigin={
+            Object {
+              "horizontal": "right",
+              "vertical": "top",
+            }
+          }
+          checked={false}
+          desktop={false}
+          disabled={false}
+          focusState="none"
+          insetChildren={false}
+          key="1"
+          primaryText="test"
+          targetOrigin={
+            Object {
+              "horizontal": "left",
+              "vertical": "top",
+            }
+          }
+          value="http://www.test.com/test.mp4"
+        />
+        <MenuItem
+          anchorOrigin={
+            Object {
+              "horizontal": "right",
+              "vertical": "top",
+            }
+          }
+          checked={false}
+          desktop={false}
+          disabled={false}
+          focusState="none"
+          insetChildren={false}
+          key="2"
+          primaryText="test2"
+          targetOrigin={
+            Object {
+              "horizontal": "left",
+              "vertical": "top",
+            }
+          }
+          value="http://www.test.com/test2.mp4"
+        />
+      </DropDownMenu>
+      <ToolbarSeparator />
+      <RaisedButton
+        disabled={false}
+        fullWidth={false}
+        label="Load"
+        labelPosition="after"
+        primary={true}
+        secondary={false}
+      />
+    </ToolbarGroup>
+  </Toolbar>
+  <br />
+</div>
+`;
