@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
-import SidePanel from './sidePanel';
+import SidePanel from '../sidepanel/SidePanel';
 
 class Header extends Component {
   state = {

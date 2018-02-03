@@ -1,7 +1,7 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Header from './components/header';
-import ToolBar from './components/toolbar';
+import Header from './components/header/Header';
+import ToolBar from './components/toolbar/Toolbar';
 
 const App = () => (
   <div className="App">

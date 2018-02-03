@@ -4,7 +4,7 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import { Toolbar, ToolbarGroup, ToolbarSeparator } from 'material-ui/Toolbar';
 import TextField from 'material-ui/TextField';
-import presets from '../presets';
+import presets from '../../presets';
 
 class Header extends Component {
   state = {
