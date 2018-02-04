@@ -65,6 +65,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
+    "test:update-snapshots": "yarn run test -u --no-watch --testNamePattern",
     "lint:css": "stylelint \"./src/*.css\" \"./demo/*.css\"",
     "lint:js": "eslint src config demo --ext .jsx --ext .js",
     "lint": "yarn run lint:css && yarn run lint:js",
