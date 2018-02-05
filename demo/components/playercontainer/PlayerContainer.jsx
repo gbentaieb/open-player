@@ -1,6 +1,19 @@
-import React from 'react';
+/* eslint-disable react/prefer-stateless-function */
+import React, { Component } from 'react';
 import style from './PlayerContainer.css';
 
-export default () => (
-  <div className={style.PlayerContainer} id="playerContainer" />
-);
+class PlayerContainer extends Component {
+  render() {
+    return (
+      <div className={style.PlayerContainerWrapper}>
+        <div
+          className={style.PlayerContainer}
+          ref={(c) => { this.domContainer = c; }}
+        />
+      </div>
+    );
+  }
+}
+
+export default PlayerContainer;
+

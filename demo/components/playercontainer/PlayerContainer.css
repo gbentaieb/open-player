@@ -1,5 +1,12 @@
-.PlayerContainer {
+.PlayerContainerWrapper {
   background-color: rgba(232, 232, 232, 0.3);
   width: 100%;
   padding-bottom: 56.25%;
+  position: relative;
+}
+
+.PlayerContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }

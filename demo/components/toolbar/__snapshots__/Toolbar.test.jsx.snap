@@ -107,6 +107,7 @@ exports[`Toolbar > Snapshot 1`] = `
         fullWidth={false}
         label="Load"
         labelPosition="after"
+        onClick={[Function]}
         primary={true}
         secondary={false}
       />
