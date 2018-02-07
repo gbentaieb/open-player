@@ -1,0 +1,1 @@
+{"version":3,"sources":["ui/components/presentational/coreplayer/CorePlayer.css"],"names":[],"mappings":"AAAA,yBACE,WACA,WAAa","file":"static/css/app.a0dbe6b7.css","sourcesContent":[".video {\n  width: 100%;\n  height: 100%;\n}\n\n\n\n// WEBPACK FOOTER //\n// ./src/ui/components/presentational/coreplayer/CorePlayer.css"],"sourceRoot":""}
