@@ -32,7 +32,7 @@ exports[`Toolbar > Snapshot 1`] = `
         multiple={false}
         onChange={[Function]}
         openImmediately={false}
-        value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        value="https://dash.akamaized.net/dash264/TestCases/2c/qualcomm/2/MultiRes.mpd"
       >
         <MenuItem
           anchorOrigin={
@@ -69,14 +69,14 @@ exports[`Toolbar > Snapshot 1`] = `
           focusState="none"
           insetChildren={false}
           key="1"
-          primaryText="MP4 - Big Buck Bunny"
+          primaryText="DASH - Big Buck Bunny"
           targetOrigin={
             Object {
               "horizontal": "left",
               "vertical": "top",
             }
           }
-          value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+          value="https://dash.akamaized.net/dash264/TestCases/2c/qualcomm/2/MultiRes.mpd"
         />
         <MenuItem
           anchorOrigin={
@@ -91,14 +91,36 @@ exports[`Toolbar > Snapshot 1`] = `
           focusState="none"
           insetChildren={false}
           key="2"
-          primaryText="MP4 - The first Blender Open Movie from 2006"
+          primaryText="DASH - The first Blender Open Movie from 2006"
           targetOrigin={
             Object {
               "horizontal": "left",
               "vertical": "top",
             }
           }
-          value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+          value="https://dash.akamaized.net/dash264/TestCases/2c/qualcomm/1/MultiResMPEG2.mpd"
+        />
+        <MenuItem
+          anchorOrigin={
+            Object {
+              "horizontal": "right",
+              "vertical": "top",
+            }
+          }
+          checked={false}
+          desktop={false}
+          disabled={false}
+          focusState="none"
+          insetChildren={false}
+          key="1"
+          primaryText="DASH - Test"
+          targetOrigin={
+            Object {
+              "horizontal": "left",
+              "vertical": "top",
+            }
+          }
+          value="https://dash.akamaized.net/dash264/CTA/imsc1/IT1-20171027_dash.mpd"
         />
       </DropDownMenu>
       <ToolbarSeparator />

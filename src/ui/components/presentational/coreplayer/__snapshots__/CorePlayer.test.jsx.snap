@@ -1,11 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CorePlayer > Snapshot 1`] = `
-<PlayerCore
+<CorePlayer
+  RxPlayer={[Function]}
   url=""
 >
   <div>
     <video />
   </div>
-</PlayerCore>
+</CorePlayer>
 `;
