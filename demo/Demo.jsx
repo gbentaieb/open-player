@@ -12,7 +12,7 @@ class App extends Component {
 
   loadVideo(url) {
     if (this.openPlayer) {
-      this.openPlayer.loadVideo(url);
+      this.openPlayer.loadVideo({ url });
     } else {
       const container = this.playerContainer.domContainer;
       this.openPlayer = new OpenPlayer(container, { url });

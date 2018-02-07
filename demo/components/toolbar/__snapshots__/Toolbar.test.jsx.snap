@@ -32,7 +32,7 @@ exports[`Toolbar > Snapshot 1`] = `
         multiple={false}
         onChange={[Function]}
         openImmediately={false}
-        value="http://www.test.com/test.mp4"
+        value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
       >
         <MenuItem
           anchorOrigin={
@@ -69,14 +69,14 @@ exports[`Toolbar > Snapshot 1`] = `
           focusState="none"
           insetChildren={false}
           key="1"
-          primaryText="test"
+          primaryText="MP4 - Big Buck Bunny"
           targetOrigin={
             Object {
               "horizontal": "left",
               "vertical": "top",
             }
           }
-          value="http://www.test.com/test.mp4"
+          value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
         />
         <MenuItem
           anchorOrigin={
@@ -91,14 +91,14 @@ exports[`Toolbar > Snapshot 1`] = `
           focusState="none"
           insetChildren={false}
           key="2"
-          primaryText="test2"
+          primaryText="MP4 - The first Blender Open Movie from 2006"
           targetOrigin={
             Object {
               "horizontal": "left",
               "vertical": "top",
             }
           }
-          value="http://www.test.com/test2.mp4"
+          value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
         />
       </DropDownMenu>
       <ToolbarSeparator />

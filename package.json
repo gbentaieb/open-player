@@ -124,7 +124,8 @@
     "parser": "babel-eslint",
     "rules": {
       "react/forbid-prop-types": 0,
-      "function-paren-newline": 0
+      "function-paren-newline": 0,
+      "jsx-a11y/media-has-caption": 0
     },
     "globals": {
       "window": true,
@@ -132,6 +133,7 @@
       "test": true,
       "expect": true,
       "shallow": true,
+      "mount": true,
       "OpenPlayer": true,
       "__DEV__": true
     }

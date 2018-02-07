@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { setConfig } from '../actions/ConfigActions';
+import CorePlayerContainer from '../components/container/coreplayer/CorePlayerContainer';
 
 class Player extends Component {
   static propTypes = {
@@ -12,11 +13,24 @@ class Player extends Component {
   };
 
   componentDidMount() {
-    this.context.store.dispatch(setConfig(this.props.config));
+    const { config } = this.props;
+    this.context.store.dispatch(setConfig(config));
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { config } = this.props;
+
+    if (nextProps.config !== config) {
+      this.context.store.dispatch(setConfig(nextProps.config));
+    }
   }
 
   render() {
-    return <div />;
+    return (
+      <div>
+        <CorePlayerContainer />
+      </div>
+    );
   }
 }
 

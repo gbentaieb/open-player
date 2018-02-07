@@ -6,13 +6,13 @@ const presets = [
   },
   {
     index: 1,
-    label: 'test',
-    value: 'http://www.test.com/test.mp4',
+    label: 'MP4 - Big Buck Bunny',
+    value: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
   },
   {
     index: 2,
-    label: 'test2',
-    value: 'http://www.test.com/test2.mp4',
+    label: 'MP4 - The first Blender Open Movie from 2006',
+    value: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
   },
 ];
 

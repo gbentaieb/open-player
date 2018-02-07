@@ -1,7 +1,7 @@
 import * as types from '../constants/ActionsTypes';
 
 const initialState = {
-  url: '',
+  url: null,
 };
 
 export default function core(state = initialState, action) {

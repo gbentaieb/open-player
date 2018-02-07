@@ -5,7 +5,7 @@ const dispatch = (type, payload) => configReducer(undefined, { type, payload });
 
 test('Reducers > config > initial state', () => {
   const initialState = dispatch(null);
-  expect(initialState.url).toEqual('');
+  expect(initialState.url).toEqual(null);
 });
 
 test('Reducers > config > MERGE_CONFIG', () => {

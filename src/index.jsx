@@ -16,6 +16,11 @@ class OpenPlayer {
     this.renderApp(config);
   }
 
+  loadVideo(config) {
+    this.config = { ...this.config, ...config };
+    this.renderApp();
+  }
+
   renderApp() {
     ReactDOM.render(
       <div style={OpenPlayer.mainDivStyle}>
