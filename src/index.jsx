@@ -9,16 +9,17 @@ class OpenPlayer {
     backgroundColor: '#000',
   }
 
-  constructor(container) {
+  constructor(container, config) {
     this.container = container;
+    this.config = config;
 
-    this.renderApp();
+    this.renderApp(config);
   }
 
   renderApp() {
     ReactDOM.render(
       <div style={OpenPlayer.mainDivStyle}>
-        <App />
+        <App config={this.config} />
       </div>,
       this.container,
     );

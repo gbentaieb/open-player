@@ -12,10 +12,8 @@ exports[`App > Snapshot 1`] = `
     }
   }
 >
-  <div
-    className="openPlayerApp"
-  >
-    <div />
-  </div>
+  <Player
+    config={Object {}}
+  />
 </Provider>
 `;
