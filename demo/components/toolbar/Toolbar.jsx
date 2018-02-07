@@ -20,7 +20,7 @@ class ToolBar extends Component {
     if (this.state.value) {
       this.props.loadVideo(this.state.value);
     } else {
-      this.props.loadVideo(this.TextField.value);
+      this.props.loadVideo(this.TextField.getValue());
     }
   }
 

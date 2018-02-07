@@ -44,7 +44,7 @@ test('Toolbar > onLoadClicked without value', () => {
   const value = 'www.test.com/test.mp4';
   const wrapper = MuiMountWithContext(<Toolbar loadVideo={loadVideo} />);
   wrapper.setState({ value: null });
-  wrapper.instance().TextField.value = value;
+  wrapper.instance().TextField.getInputNode().value = value;
   wrapper.instance().onLoadClicked();
   expect(loadVideo.calledWith(value)).toEqual(true);
 });

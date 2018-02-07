@@ -15,7 +15,7 @@ const presets = [
     value: 'https://dash.akamaized.net/dash264/TestCases/2c/qualcomm/1/MultiResMPEG2.mpd',
   },
   {
-    index: 1,
+    index: 3,
     label: 'DASH - Test',
     value: 'https://dash.akamaized.net/dash264/CTA/imsc1/IT1-20171027_dash.mpd',
   },
