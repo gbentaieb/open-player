@@ -17,3 +17,5 @@ For the ui, we will use [the material-ui package](http://www.material-ui.com/) f
 # Work In Progress
 This package is still a work in progress. However, do not hesitate to tell us what you think even if the project is not yet ready to be used.
 
+You can however checkout the live demo [here](https://gbentaieb.github.io/open-player/) to see the progress we make !
+
