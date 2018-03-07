@@ -4,8 +4,9 @@ import CorePlayer from '../../presentational/coreplayer/CorePlayer';
 
 function mapStateToProps(state) {
   return {
-    url: state.config.url,
     RxPlayer,
+    url: state.config.url,
+    requestPlay: state.core.requestPlay,
   };
 }
 

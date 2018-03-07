@@ -8,12 +8,13 @@ const store = createReduxStore();
 
 const App = props => (
   <Provider store={store}>
-    <Player config={props.config} />
+    <Player config={props.config} onLoad={props.onLoad} />
   </Provider>
 );
 
 App.propTypes = {
   config: PropTypes.object.isRequired,
+  onLoad: PropTypes.func.isRequired,
 };
 
 export default App;

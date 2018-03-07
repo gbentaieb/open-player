@@ -5,8 +5,9 @@ import styles from './CorePlayer.css';
 
 class CorePlayer extends Component {
   static propTypes = {
-    url: PropTypes.string,
     RxPlayer: PropTypes.func.isRequired,
+    url: PropTypes.string,
+    requestPlay: PropTypes.bool.isRequired,
   }
 
   static defaultProps = {
@@ -26,11 +27,19 @@ class CorePlayer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { url } = this.props;
+    const { url, requestPlay } = this.props;
 
     if (nextProps.url !== url) {
       const options = this.getLoadVideoOptions({ url: nextProps.url });
       this.rxPlayer.loadVideo(options);
+    }
+
+    if (nextProps.requestPlay !== requestPlay) {
+      if (nextProps.requestPlay) {
+        this.rxPlayer.play();
+      } else {
+        this.rxPlayer.pause();
+      }
     }
   }
 
