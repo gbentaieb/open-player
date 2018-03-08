@@ -36,9 +36,13 @@ class ToolBar extends Component {
     ));
     return (
       <div className="Toolbar">
-        <Toolbar>
+        <Toolbar style={{ padding: 0 }}>
           <ToolbarGroup firstChild style={{ width: '100%', margin: 0 }}>
-            <DropDownMenu value={this.state.value} onChange={this.handleChange}>
+            <DropDownMenu
+              value={this.state.value}
+              onChange={this.handleChange}
+              style={{ overflow: 'hidden', margin: 0 }}
+            >
               {menuItems}
             </DropDownMenu>
             <ToolbarSeparator />

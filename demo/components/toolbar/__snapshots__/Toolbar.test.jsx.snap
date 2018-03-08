@@ -6,6 +6,11 @@ exports[`test demo toolbar Toolbar > Snapshot 1`] = `
 >
   <Toolbar
     noGutter={false}
+    style={
+      Object {
+        "padding": 0,
+      }
+    }
   >
     <ToolbarGroup
       firstChild={true}
@@ -32,6 +37,12 @@ exports[`test demo toolbar Toolbar > Snapshot 1`] = `
         multiple={false}
         onChange={[Function]}
         openImmediately={false}
+        style={
+          Object {
+            "margin": 0,
+            "overflow": "hidden",
+          }
+        }
         value="https://dash.akamaized.net/dash264/TestCases/2c/qualcomm/2/MultiRes.mpd"
       >
         <MenuItem

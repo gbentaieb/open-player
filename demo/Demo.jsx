@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Header from './components/header/Header';
 import ToolBar from './components/toolbar/Toolbar';
 import PlayerContainer from './components/playercontainer/PlayerContainer';
+import style from './Demo.css';
 
 class App extends Component {
   constructor(...args) {
@@ -27,7 +28,9 @@ class App extends Component {
           <div>
             <Header />
             <ToolBar loadVideo={this.loadVideo} />
-            <PlayerContainer ref={(c) => { this.playerContainer = c; }} />
+            <div className={style.PlayerContainer}>
+              <PlayerContainer ref={(c) => { this.playerContainer = c; }} />
+            </div>
           </div>
         </MuiThemeProvider>
       </div>
