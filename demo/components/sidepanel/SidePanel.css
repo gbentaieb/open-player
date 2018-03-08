@@ -1,0 +1,13 @@
+.DescriptionCard {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: absolute;
+  bottom: 0;
+}
+
+.DescriptionPaper {
+  color: grey;
+  text-align: center;
+  font-size: 12px;
+  margin: 2px;
+}

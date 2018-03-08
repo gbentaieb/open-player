@@ -1,7 +1,9 @@
 import React from 'react';
 import PlayerContainer from './PlayerContainer';
 
-test('PlayerContainer > Snapshot', () => {
-  const wrapper = shallow(<PlayerContainer />);
-  expect(wrapper).toMatchSnapshot();
+describe('Test demo player container', () => {
+  test('PlayerContainer > Snapshot', () => {
+    const wrapper = shallow(<PlayerContainer />);
+    expect(wrapper).toMatchSnapshot();
+  });
 });

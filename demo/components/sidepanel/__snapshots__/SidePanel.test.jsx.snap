@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SidePanel > Snapshot 1`] = `
+exports[`test demo sidepanel SidePanel > Snapshot 1`] = `
 <div
   className="SidePanel"
 >
   <AppBar
     showMenuIconButton={false}
-    title="API"
+    title="API & Infos"
     zDepth={1}
   />
   <List>
@@ -19,6 +19,7 @@ exports[`SidePanel > Snapshot 1`] = `
       insetChildren={false}
       nestedItems={Array []}
       nestedLevel={0}
+      onClick={[Function]}
       onKeyboardFocus={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
@@ -26,7 +27,7 @@ exports[`SidePanel > Snapshot 1`] = `
       onTouchEnd={[Function]}
       onTouchStart={[Function]}
       open={null}
-      primaryText="play"
+      primaryText="Play"
       primaryTogglesNestedList={false}
       secondaryTextLines={1}
     />
@@ -39,6 +40,7 @@ exports[`SidePanel > Snapshot 1`] = `
       insetChildren={false}
       nestedItems={Array []}
       nestedLevel={0}
+      onClick={[Function]}
       onKeyboardFocus={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
@@ -46,9 +48,12 @@ exports[`SidePanel > Snapshot 1`] = `
       onTouchEnd={[Function]}
       onTouchStart={[Function]}
       open={null}
-      primaryText="pause"
+      primaryText="Pause"
       primaryTogglesNestedList={false}
       secondaryTextLines={1}
+    />
+    <Divider
+      inset={false}
     />
     <ListItem
       autoGenerateNestedIndicator={true}
@@ -59,6 +64,7 @@ exports[`SidePanel > Snapshot 1`] = `
       insetChildren={false}
       nestedItems={Array []}
       nestedLevel={0}
+      onClick={[Function]}
       onKeyboardFocus={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
@@ -66,30 +72,22 @@ exports[`SidePanel > Snapshot 1`] = `
       onTouchEnd={[Function]}
       onTouchStart={[Function]}
       open={null}
-      primaryText="mute"
+      primaryText="Github repository"
       primaryTogglesNestedList={false}
       secondaryTextLines={1}
     />
-    <ListItem
-      autoGenerateNestedIndicator={true}
-      containerElement="span"
-      disableKeyboardFocus={false}
-      disabled={false}
-      initiallyOpen={false}
-      insetChildren={false}
-      nestedItems={Array []}
-      nestedLevel={0}
-      onKeyboardFocus={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      onNestedListToggle={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}
-      open={null}
-      primaryText="unmute"
-      primaryTogglesNestedList={false}
-      secondaryTextLines={1}
-    />
+    <div>
+      <Paper
+        circle={false}
+        rounded={true}
+        transitionEnabled={true}
+        zDepth={0}
+      >
+        <div>
+          Open Player is an open source player to make video streaming easier. Checkout the github repository to give us some feedbacks !
+        </div>
+      </Paper>
+    </div>
   </List>
 </div>
 `;

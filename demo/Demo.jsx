@@ -16,6 +16,7 @@ class App extends Component {
     } else {
       const container = this.playerContainer.domContainer;
       this.openPlayer = new OpenPlayer(container, { url });
+      window.$openPlayer = this.openPlayer;
     }
   }
 

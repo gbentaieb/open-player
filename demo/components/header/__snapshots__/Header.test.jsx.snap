@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header > Snapshot 1`] = `
+exports[`Demo header test Header > Snapshot 1`] = `
 <div
   className="Header"
 >

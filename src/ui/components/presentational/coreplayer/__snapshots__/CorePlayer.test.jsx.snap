@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CorePlayer > Snapshot 1`] = `
+exports[`CorePlayer snapshot CorePlayer > Snapshot 1`] = `
 <CorePlayer
   RxPlayer={[Function]}
+  requestPlay={true}
   url=""
 >
   <div>

@@ -140,7 +140,8 @@
       "shallow": true,
       "mount": true,
       "OpenPlayer": true,
-      "__DEV__": true
+      "__DEV__": true,
+      "describe": true
     }
   }
 }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App > Snapshot 1`] = `
+exports[`test App component App > Snapshot 1`] = `
 <Provider
   store={
     Object {
@@ -14,6 +14,7 @@ exports[`App > Snapshot 1`] = `
 >
   <Player
     config={Object {}}
+    onLoad={[Function]}
   />
 </Provider>
 `;

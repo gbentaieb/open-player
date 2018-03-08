@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Player > Snapshot 1`] = `
+exports[`test Player component Player > Snapshot 1`] = `
 <Player
   config={Object {}}
+  onLoad={[Function]}
 />
 `;

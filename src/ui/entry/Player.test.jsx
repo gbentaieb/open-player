@@ -17,13 +17,15 @@ const defaultStore = createFakeStore({
   config: {},
 });
 
-test('Player > Snapshot', () => {
-  const globalWrapper = shallow(
-    <Provider store={defaultStore}>
-      <Player config={{}} />
-    </Provider>,
-  );
+describe('test Player component', () => {
+  test('Player > Snapshot', () => {
+    const globalWrapper = shallow(
+      <Provider store={defaultStore}>
+        <Player config={{}} onLoad={() => {}} />
+      </Provider>,
+    );
 
-  const wrapper = globalWrapper.find(Player);
-  expect(wrapper).toMatchSnapshot();
+    const wrapper = globalWrapper.find(Player);
+    expect(wrapper).toMatchSnapshot();
+  });
 });
