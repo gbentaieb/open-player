@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { setConfig } from '../actions/ConfigActions';
 import { requestPlay } from '../actions/CoreActions';
+
 import CorePlayerContainer from '../components/container/coreplayer/CorePlayerContainer';
+import ControlsContainer from '../components/container/controlscontainer/ControlsContainer';
+
+import style from './Player.css';
 
 class Player extends Component {
   static propTypes = {
@@ -35,7 +39,12 @@ class Player extends Component {
   render() {
     return (
       <div>
-        <CorePlayerContainer />
+        <div className={style.ControlsWrapper}>
+          <ControlsContainer />
+        </div>
+        <div className={style.CoreWrapper}>
+          <CorePlayerContainer />
+        </div>
       </div>
     );
   }

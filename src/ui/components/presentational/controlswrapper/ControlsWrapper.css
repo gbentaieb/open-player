@@ -1,0 +1,8 @@
+.ControlsWrapper {
+  position: absolute;
+  bottom: 0;
+  height: 80px;
+  width: 100%;
+  z-index: 10;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+}
