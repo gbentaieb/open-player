@@ -3,7 +3,8 @@
 exports[`CorePlayer snapshot CorePlayer > Snapshot 1`] = `
 <CorePlayer
   RxPlayer={[Function]}
-  requestPlay={true}
+  playRequested={true}
+  setPlayerState={[Function]}
   url=""
 >
   <div>

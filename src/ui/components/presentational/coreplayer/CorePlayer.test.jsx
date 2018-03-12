@@ -4,7 +4,8 @@ import CorePlayer from './CorePlayer';
 
 const defaultProps = {
   RxPlayer: FakeRxPlayer,
-  requestPlay: true,
+  playRequested: true,
+  setPlayerState: () => {},
 };
 
 describe('CorePlayer snapshot', () => {

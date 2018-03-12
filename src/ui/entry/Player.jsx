@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 import { setConfig } from '../actions/ConfigActions';
 import { requestPlay } from '../actions/CoreActions';
 
@@ -38,14 +40,16 @@ class Player extends Component {
 
   render() {
     return (
-      <div>
-        <div className={style.ControlsWrapper}>
-          <ControlsContainer />
+      <MuiThemeProvider>
+        <div>
+          <div className={style.ControlsWrapper}>
+            <ControlsContainer />
+          </div>
+          <div className={style.CoreWrapper}>
+            <CorePlayerContainer />
+          </div>
         </div>
-        <div className={style.CoreWrapper}>
-          <CorePlayerContainer />
-        </div>
-      </div>
+      </MuiThemeProvider>
     );
   }
 }

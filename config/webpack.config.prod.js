@@ -133,6 +133,18 @@ module.exports = {
               name: 'static/media/[name].[hash:8].[ext]',
             },
           },
+          // Process svg files
+          {
+            test: /\.svg$/,
+            use: [
+              {
+                loader: 'svg-sprite-loader',
+                options: {
+                  symbolId: '[name]_[hash]',
+                },
+              },
+            ],
+          },
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,

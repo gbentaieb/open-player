@@ -7,7 +7,8 @@ class CorePlayer extends Component {
   static propTypes = {
     RxPlayer: PropTypes.func.isRequired,
     url: PropTypes.string,
-    requestPlay: PropTypes.bool.isRequired,
+    playRequested: PropTypes.bool.isRequired,
+    setPlayerState: PropTypes.func.isRequired,
   }
 
   static defaultProps = {
@@ -20,6 +21,10 @@ class CorePlayer extends Component {
     this.setVideoElementProperties();
     this.createRxPlayer();
 
+    this.rxPlayer.addEventListener('playerStateChange', (event) => {
+      this.props.setPlayerState(event);
+    });
+
     if (url) {
       const options = this.getLoadVideoOptions({ url });
       this.rxPlayer.loadVideo(options);
@@ -27,15 +32,15 @@ class CorePlayer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { url, requestPlay } = this.props;
+    const { url, playRequested } = this.props;
 
     if (nextProps.url !== url) {
       const options = this.getLoadVideoOptions({ url: nextProps.url });
       this.rxPlayer.loadVideo(options);
     }
 
-    if (nextProps.requestPlay !== requestPlay) {
-      if (nextProps.requestPlay) {
+    if (nextProps.playRequested !== playRequested) {
+      if (nextProps.playRequested) {
         this.rxPlayer.play();
       } else {
         this.rxPlayer.pause();

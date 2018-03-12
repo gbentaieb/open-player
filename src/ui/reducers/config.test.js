@@ -12,6 +12,7 @@ describe('test config reducer', () => {
   test('Reducers > config > MERGE_CONFIG', () => {
     const config = {
       url: 'https://www.test.com/test.mp4',
+      mainColor: 'blue',
     };
     const state = dispatch(types.MERGE_CONFIG, config);
     expect(state).toEqual(config);

@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ControlsContainer snapshot ControlsContainer > Snapshot 1`] = `
-<ControlsContainer
-  hoverColor="white"
-  isPlaying={false}
-  requestPlay={[Function]}
+exports[`CorePlayerContainer snapshot CorePlayerContainer > Snapshot 1`] = `
+<CorePlayer
+  RxPlayer={[Function]}
+  playRequested={true}
+  setPlayerState={[Function]}
   store={
     Object {
       "dispatch": [Function],
@@ -38,5 +38,6 @@ exports[`ControlsContainer snapshot ControlsContainer > Snapshot 1`] = `
       "unsubscribe": undefined,
     }
   }
+  url="https://www.test.com/test.mp4"
 />
 `;

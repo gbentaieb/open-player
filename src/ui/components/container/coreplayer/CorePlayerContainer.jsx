@@ -1,18 +1,19 @@
 import { connect } from 'react-redux';
 import RxPlayer from 'rx-player';
 import CorePlayer from '../../presentational/coreplayer/CorePlayer';
+import { setPlayerState } from '../../../actions/CoreActions';
 
 function mapStateToProps(state) {
   return {
     RxPlayer,
     url: state.config.url,
-    requestPlay: state.core.requestPlay,
+    playRequested: state.core.playRequested,
   };
 }
 
 export default connect(
   mapStateToProps,
   {
-    /* add action functions */
+    setPlayerState,
   },
 )(CorePlayer);

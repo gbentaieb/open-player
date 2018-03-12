@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayPauseButton snapshot PlayPauseButton > Snapshot 1`] = `
+<div>
+  <Button
+    color="white"
+    glyph={Object {}}
+    hoverColor="00BCD4"
+    onClick={[Function]}
+  />
+</div>
+`;

@@ -2,6 +2,7 @@ import * as types from '../constants/ActionsTypes';
 
 const initialState = {
   url: null,
+  mainColor: '00BCD4',
 };
 
 export default function core(state = initialState, action) {

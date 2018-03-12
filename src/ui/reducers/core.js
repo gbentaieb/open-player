@@ -2,7 +2,7 @@ import * as types from '../constants/ActionsTypes';
 
 const initialState = {
   playerState: 'STOPPED',
-  requestPlay: true,
+  playRequested: true,
 };
 
 export default function core(state = initialState, action) {
@@ -10,8 +10,15 @@ export default function core(state = initialState, action) {
     case types.REQUEST_PLAY:
       return {
         ...state,
-        requestPlay: action.payload,
+        playRequested: action.payload,
       };
+
+    case types.SET_PLAYER_STATE:
+      return {
+        ...state,
+        playerState: action.payload,
+      };
+
     default:
       return state;
   }

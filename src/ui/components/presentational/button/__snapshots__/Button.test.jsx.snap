@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button snapshot Button > Snapshot 1`] = `
+<IconButton
+  disableTouchRipple={false}
+  disabled={false}
+  hoveredStyle={
+    Object {
+      "color": "00BCD4",
+    }
+  }
+  iconStyle={
+    Object {
+      "color": "white",
+      "fill": "currentColor",
+      "height": "70%",
+      "width": "70%",
+    }
+  }
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  tooltipPosition="bottom-center"
+  touch={false}
+>
+  <svg
+    viewBox="undefined"
+  >
+    <use
+      xlinkHref="#undefined"
+    />
+  </svg>
+</IconButton>
+`;
