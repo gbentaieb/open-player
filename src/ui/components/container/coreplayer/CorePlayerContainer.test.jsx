@@ -15,6 +15,7 @@ const defaultStore = {
 
 const defaultProps = {
   RxPlayer: FakeRxPlayer,
+  videoElement: document.createElement('video'),
 };
 
 describe('CorePlayerContainer snapshot', () => {

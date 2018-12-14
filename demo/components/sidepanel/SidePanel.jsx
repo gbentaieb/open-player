@@ -1,14 +1,27 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { List, ListItem } from 'material-ui/List';
-import AppBar from 'material-ui/AppBar';
-import Divider from 'material-ui/Divider';
-import Paper from 'material-ui/Paper';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
+import { withStyles } from '@material-ui/core';
 
-import style from './SidePanel.css';
+import GithubIcon from '../../assets/GithubIcon';
+
+const styles = () => ({
+  icon: {
+    marginRight: 0,
+    color: 'black',
+  },
+});
 
 class SidePanel extends Component {
   static propTypes = {
+    classes: PropTypes.object.isRequired,
     onClickOutside: PropTypes.func.isRequired,
   };
 
@@ -50,29 +63,36 @@ class SidePanel extends Component {
   }
 
   render() {
+    const { classes } = this.props;
+
     return (
-      <div className="SidePanel" ref={this.setWrapperRef}>
-        <AppBar
-          title="API & Infos"
-          showMenuIconButton={false}
-        />
-        <List>
-          <ListItem primaryText="Play" onClick={SidePanel.callPlay} />
-          <ListItem primaryText="Pause" onClick={SidePanel.callPause} />
+      <div ref={this.setWrapperRef}>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6" color="inherit">
+              { this.isBurgerOpen ? '' : 'Open Player Demo' }
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <List component="nav">
+          <ListItem button onClick={SidePanel.callPlay}>
+            <ListItemText primary="Play" />
+          </ListItem>
+          <ListItem button onClick={SidePanel.callPause}>
+            <ListItemText primary="Pause" />
+          </ListItem>
           <Divider />
-          <ListItem primaryText="Github repository" onClick={SidePanel.openGithubPage} />
-          <div className={style.DescriptionCard}>
-            <Paper zDepth={0} >
-              <div className={style.DescriptionPaper}>
-                Open Player is an open source player to make video streaming easier.
-                Checkout the github repository to give us some feedbacks !
-              </div>
-            </Paper>
-          </div>
+          <ListItem button onClick={SidePanel.openGithubPage}>
+            <ListItemIcon className={classes.icon}>
+              <GithubIcon />
+            </ListItemIcon>
+            <ListItemText primary="Github repository" />
+          </ListItem>
         </List>
       </div>
     );
   }
 }
 
-export default SidePanel;
+export { SidePanel };
+export default withStyles(styles)(SidePanel);

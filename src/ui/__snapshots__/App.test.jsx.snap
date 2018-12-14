@@ -15,6 +15,7 @@ exports[`test App component App > Snapshot 1`] = `
   <Player
     config={Object {}}
     onLoad={[Function]}
+    videoElement={Object {}}
   />
 </Provider>
 `;

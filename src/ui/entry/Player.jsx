@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { createMuiTheme } from '@material-ui/core/styles';
 
 import { setConfig } from '../actions/ConfigActions';
 import { requestPlay } from '../actions/CoreActions';
@@ -10,8 +11,15 @@ import ControlsContainer from '../components/container/controlscontainer/Control
 
 import style from './Player.css';
 
+const defaultTheme = createMuiTheme({
+  typography: {
+    useNextVariants: true,
+  },
+});
+
 class Player extends Component {
   static propTypes = {
+    videoElement: PropTypes.object.isRequired,
     config: PropTypes.object.isRequired,
     onLoad: PropTypes.func.isRequired,
   };
@@ -40,13 +48,13 @@ class Player extends Component {
 
   render() {
     return (
-      <MuiThemeProvider>
+      <MuiThemeProvider theme={defaultTheme}>
         <div>
           <div className={style.ControlsWrapper}>
             <ControlsContainer />
           </div>
           <div className={style.CoreWrapper}>
-            <CorePlayerContainer />
+            <CorePlayerContainer videoElement={this.props.videoElement} />
           </div>
         </div>
       </MuiThemeProvider>

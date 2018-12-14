@@ -21,7 +21,7 @@ describe('test Player component', () => {
   test('Player > Snapshot', () => {
     const globalWrapper = shallow(
       <Provider store={defaultStore}>
-        <Player config={{}} onLoad={() => {}} />
+        <Player videoElement={{}} config={{}} onLoad={() => {}} />
       </Provider>,
     );
 

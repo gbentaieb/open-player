@@ -1,61 +1,131 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import RaisedButton from 'material-ui/RaisedButton';
-import DropDownMenu from 'material-ui/DropDownMenu';
-import MenuItem from 'material-ui/MenuItem';
-import { Toolbar, ToolbarGroup, ToolbarSeparator } from 'material-ui/Toolbar';
-import TextField from 'material-ui/TextField';
+import MuiToolbar from '@material-ui/core/Toolbar';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core';
 import presets from '../../presets';
+
+const styles = {
+  toolbar: {
+    backgroundColor: 'rgb(232, 232, 232)',
+  },
+  list: {
+    width: '100%',
+  },
+  textField: {
+    marginLeft: '10px',
+    marginRight: '10px',
+  },
+  textFieldContainer: {
+    display: 'flex',
+  },
+  loadButton: {
+    marginLeft: '10px',
+  },
+};
 
 class ToolBar extends Component {
   static propTypes = {
+    classes: PropTypes.object.isRequired,
     loadVideo: PropTypes.func.isRequired,
   };
 
   state = {
+    label: presets[1].label,
     value: presets[1].value,
+    textFieldValue: '',
   }
 
   onLoadClicked = () => {
     if (this.state.value) {
       this.props.loadVideo(this.state.value);
     } else {
-      this.props.loadVideo(this.TextField.getValue());
+      this.props.loadVideo(this.state.textFieldValue);
     }
   }
 
-  handleChange = (event, index, value) => {
-    this.setState({
-      value,
-    });
-  }
+  handleClickListItem = ({ currentTarget }) => {
+    this.setState(state => ({ ...state, anchorEl: currentTarget }));
+  };
+
+  handleMenuItemClick = (index, label, value) => {
+    this.setState(state => ({
+      ...state, label, value, selectedIndex: index, anchorEl: null,
+    }));
+  };
+
+  handleMenuClose = () => {
+    this.setState(state => ({ ...state, anchorEl: null }));
+  };
+
+  handleTextFieldChange = ({ target }) => {
+    this.setState(state => ({
+      ...state,
+      textFieldValue: target.value,
+    }));
+  };
 
   render() {
+    const { classes } = this.props;
+    const { anchorEl } = this.state;
     const menuItems = presets.map(({ index, value, label }) => (
-      <MenuItem value={value} key={index} primaryText={label} />
+      <MenuItem
+        value={value}
+        key={index}
+        onClick={() => this.handleMenuItemClick(index, label, value)}
+      >
+        {label}
+      </MenuItem>
     ));
+
     return (
-      <div className="Toolbar">
-        <Toolbar style={{ padding: 0 }}>
-          <ToolbarGroup firstChild style={{ width: '100%', margin: 0 }}>
-            <DropDownMenu
-              value={this.state.value}
-              onChange={this.handleChange}
-              style={{ overflow: 'hidden', margin: 0 }}
+      <div>
+        <MuiToolbar className={classes.toolbar}>
+          <List component="nav" className={classes.list}>
+            <ListItem
+              button
+              onClick={this.handleClickListItem}
             >
-              {menuItems}
-            </DropDownMenu>
-            <ToolbarSeparator />
-            <RaisedButton label="Load" primary onClick={this.onLoadClicked} />
-          </ToolbarGroup>
-        </Toolbar>
+              <ListItemText
+                primary={this.state.label}
+              />
+            </ListItem>
+          </List>
+          <Menu
+            id="lock-menu"
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={this.handleMenuClose}
+          >
+            {menuItems}
+          </Menu>
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.loadButton}
+            onClick={this.onLoadClicked}
+          >
+            Load
+          </Button>
+        </MuiToolbar>
         <br />
         { !this.state.value &&
-          <div style={{ margin: '10px', marginTop: '0px' }}>
+          <div className={classes.textFieldContainer}>
             <TextField
-              floatingLabelText="Content URL"
+              id="Content URL"
+              label="Content URL"
+              className={classes.textField}
+              value={this.state.textFieldValue}
+              onChange={this.handleTextFieldChange}
+              margin="normal"
               fullWidth
-              ref={(t) => { this.TextField = t; }}
+              innerRef={(t) => { this.TextField = t; }}
             />
           </div>
         }
@@ -64,4 +134,5 @@ class ToolBar extends Component {
   }
 }
 
-export default ToolBar;
+export { ToolBar };
+export default withStyles(styles)(ToolBar);

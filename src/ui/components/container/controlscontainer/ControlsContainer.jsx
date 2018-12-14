@@ -11,7 +11,6 @@ import { isPlaying } from '../../../utils/playerStates';
 function mapStateToProps(state) {
   return {
     isPlaying: isPlaying(state.core.playerState),
-    hoverColor: state.config.mainColor,
   };
 }
 
@@ -19,7 +18,6 @@ class ControlsContainer extends Component {
   static propTypes = {
     isPlaying: PropTypes.bool.isRequired,
     requestPlay: PropTypes.func.isRequired,
-    hoverColor: PropTypes.string.isRequired,
   }
 
   static defaultProps = {
@@ -36,7 +34,6 @@ class ControlsContainer extends Component {
         <PlayPauseButton
           onClick={this.playPause}
           isPlaying={this.props.isPlaying}
-          hoverColor={this.props.hoverColor}
         />
         {/* <ProgressBar /> */}
       </ControlsWrapper>

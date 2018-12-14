@@ -2,10 +2,8 @@
 
 exports[`PlayPauseButton snapshot PlayPauseButton > Snapshot 1`] = `
 <div>
-  <Button
-    color="white"
+  <WithStyles(Button)
     glyph={Object {}}
-    hoverColor="00BCD4"
     onClick={[Function]}
   />
 </div>

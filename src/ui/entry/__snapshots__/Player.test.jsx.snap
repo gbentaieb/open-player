@@ -4,5 +4,6 @@ exports[`test Player component Player > Snapshot 1`] = `
 <Player
   config={Object {}}
   onLoad={[Function]}
+  videoElement={Object {}}
 />
 `;

@@ -1,18 +1,22 @@
 import React from 'react';
 import { stub } from 'sinon';
-import SidePanel from './SidePanel';
-import { MuiMountWithContext } from '../../../test/utils';
+import { SidePanel } from './SidePanel';
+
+const defaultProps = {
+  classes: {},
+  onClickOutside: () => {},
+};
 
 describe('test demo sidepanel', () => {
   test('SidePanel > Snapshot', () => {
-    const onClickOutside = () => {};
-    const wrapper = shallow(<SidePanel onClickOutside={onClickOutside} />);
+    const wrapper = shallow(<SidePanel {...defaultProps} />);
     expect(wrapper).toMatchSnapshot();
   });
 
   test('SidePanel > handleClickOutside', () => {
     const onClickOutside = stub();
-    const wrapper = MuiMountWithContext(<SidePanel onClickOutside={onClickOutside} />);
+    const props = { ...defaultProps, onClickOutside };
+    const wrapper = mount(<SidePanel {...props} />);
     wrapper.instance().handleClickOutside({ target: document.createElement('div') });
     expect(onClickOutside.calledOnce).toEqual(true);
   });

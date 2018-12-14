@@ -1,151 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test demo toolbar Toolbar > Snapshot 1`] = `
-<div
-  className="Toolbar"
->
-  <Toolbar
-    noGutter={false}
-    style={
-      Object {
-        "padding": 0,
-      }
-    }
-  >
-    <ToolbarGroup
-      firstChild={true}
-      lastChild={false}
-      style={
-        Object {
-          "margin": 0,
-          "width": "100%",
-        }
-      }
+<div>
+  <WithStyles(Toolbar)>
+    <WithStyles(List)
+      component="nav"
     >
-      <DropDownMenu
-        anchorOrigin={
-          Object {
-            "horizontal": "left",
-            "vertical": "top",
-          }
-        }
-        animated={true}
-        autoWidth={true}
-        disabled={false}
-        iconButton={<NavigationArrowDropDown />}
-        maxHeight={500}
-        multiple={false}
-        onChange={[Function]}
-        openImmediately={false}
-        style={
-          Object {
-            "margin": 0,
-            "overflow": "hidden",
-          }
-        }
+      <WithStyles(ListItem)
+        button={true}
+        onClick={[Function]}
+      >
+        <WithStyles(ListItemText)
+          primary="DASH - Big Buck Bunny"
+        />
+      </WithStyles(ListItem)>
+    </WithStyles(List)>
+    <WithStyles(Menu)
+      id="lock-menu"
+      onClose={[Function]}
+      open={false}
+    >
+      <WithStyles(MenuItem)
+        key="0"
+        onClick={[Function]}
+        value={null}
+      >
+        Custom Url
+      </WithStyles(MenuItem)>
+      <WithStyles(MenuItem)
+        key="1"
+        onClick={[Function]}
         value="https://dash.akamaized.net/dash264/TestCases/2c/qualcomm/2/MultiRes.mpd"
       >
-        <MenuItem
-          anchorOrigin={
-            Object {
-              "horizontal": "right",
-              "vertical": "top",
-            }
-          }
-          checked={false}
-          desktop={false}
-          disabled={false}
-          focusState="none"
-          insetChildren={false}
-          key="0"
-          primaryText="Custom Url"
-          targetOrigin={
-            Object {
-              "horizontal": "left",
-              "vertical": "top",
-            }
-          }
-          value={null}
-        />
-        <MenuItem
-          anchorOrigin={
-            Object {
-              "horizontal": "right",
-              "vertical": "top",
-            }
-          }
-          checked={false}
-          desktop={false}
-          disabled={false}
-          focusState="none"
-          insetChildren={false}
-          key="1"
-          primaryText="DASH - Big Buck Bunny"
-          targetOrigin={
-            Object {
-              "horizontal": "left",
-              "vertical": "top",
-            }
-          }
-          value="https://dash.akamaized.net/dash264/TestCases/2c/qualcomm/2/MultiRes.mpd"
-        />
-        <MenuItem
-          anchorOrigin={
-            Object {
-              "horizontal": "right",
-              "vertical": "top",
-            }
-          }
-          checked={false}
-          desktop={false}
-          disabled={false}
-          focusState="none"
-          insetChildren={false}
-          key="2"
-          primaryText="DASH - The first Blender Open Movie from 2006"
-          targetOrigin={
-            Object {
-              "horizontal": "left",
-              "vertical": "top",
-            }
-          }
-          value="https://dash.akamaized.net/dash264/TestCases/2c/qualcomm/1/MultiResMPEG2.mpd"
-        />
-        <MenuItem
-          anchorOrigin={
-            Object {
-              "horizontal": "right",
-              "vertical": "top",
-            }
-          }
-          checked={false}
-          desktop={false}
-          disabled={false}
-          focusState="none"
-          insetChildren={false}
-          key="3"
-          primaryText="DASH - Test"
-          targetOrigin={
-            Object {
-              "horizontal": "left",
-              "vertical": "top",
-            }
-          }
-          value="https://dash.akamaized.net/dash264/CTA/imsc1/IT1-20171027_dash.mpd"
-        />
-      </DropDownMenu>
-      <ToolbarSeparator />
-      <RaisedButton
-        disabled={false}
-        fullWidth={false}
-        label="Load"
-        labelPosition="after"
+        DASH - Big Buck Bunny
+      </WithStyles(MenuItem)>
+      <WithStyles(MenuItem)
+        key="2"
         onClick={[Function]}
-        primary={true}
-        secondary={false}
-      />
-    </ToolbarGroup>
-  </Toolbar>
+        value="https://dash.akamaized.net/dash264/TestCases/2c/qualcomm/1/MultiResMPEG2.mpd"
+      >
+        DASH - The first Blender Open Movie from 2006
+      </WithStyles(MenuItem)>
+      <WithStyles(MenuItem)
+        key="3"
+        onClick={[Function]}
+        value="https://dash.akamaized.net/dash264/CTA/imsc1/IT1-20171027_dash.mpd"
+      >
+        DASH - Test
+      </WithStyles(MenuItem)>
+    </WithStyles(Menu)>
+    <WithStyles(Button)
+      color="primary"
+      onClick={[Function]}
+      variant="contained"
+    >
+      Load
+    </WithStyles(Button)>
+  </WithStyles(Toolbar)>
   <br />
 </div>
 `;
