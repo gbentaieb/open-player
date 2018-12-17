@@ -1,93 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test demo sidepanel SidePanel > Snapshot 1`] = `
-<div
-  className="SidePanel"
->
-  <AppBar
-    showMenuIconButton={false}
-    title="API & Infos"
-    zDepth={1}
-  />
-  <List>
-    <ListItem
-      autoGenerateNestedIndicator={true}
-      containerElement="span"
-      disableKeyboardFocus={false}
-      disabled={false}
-      initiallyOpen={false}
-      insetChildren={false}
-      nestedItems={Array []}
-      nestedLevel={0}
-      onClick={[Function]}
-      onKeyboardFocus={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      onNestedListToggle={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}
-      open={null}
-      primaryText="Play"
-      primaryTogglesNestedList={false}
-      secondaryTextLines={1}
-    />
-    <ListItem
-      autoGenerateNestedIndicator={true}
-      containerElement="span"
-      disableKeyboardFocus={false}
-      disabled={false}
-      initiallyOpen={false}
-      insetChildren={false}
-      nestedItems={Array []}
-      nestedLevel={0}
-      onClick={[Function]}
-      onKeyboardFocus={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      onNestedListToggle={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}
-      open={null}
-      primaryText="Pause"
-      primaryTogglesNestedList={false}
-      secondaryTextLines={1}
-    />
-    <Divider
-      inset={false}
-    />
-    <ListItem
-      autoGenerateNestedIndicator={true}
-      containerElement="span"
-      disableKeyboardFocus={false}
-      disabled={false}
-      initiallyOpen={false}
-      insetChildren={false}
-      nestedItems={Array []}
-      nestedLevel={0}
-      onClick={[Function]}
-      onKeyboardFocus={[Function]}
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      onNestedListToggle={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}
-      open={null}
-      primaryText="Github repository"
-      primaryTogglesNestedList={false}
-      secondaryTextLines={1}
-    />
-    <div>
-      <Paper
-        circle={false}
-        rounded={true}
-        transitionEnabled={true}
-        zDepth={0}
+<div>
+  <WithStyles(AppBar)
+    position="static"
+  >
+    <WithStyles(Toolbar)>
+      <WithStyles(Typography)
+        color="inherit"
+        variant="h6"
       >
-        <div>
-          Open Player is an open source player to make video streaming easier. Checkout the github repository to give us some feedbacks !
-        </div>
-      </Paper>
-    </div>
-  </List>
+        Open Player Demo
+      </WithStyles(Typography)>
+    </WithStyles(Toolbar)>
+  </WithStyles(AppBar)>
+  <WithStyles(List)
+    component="nav"
+  >
+    <WithStyles(ListItem)
+      button={true}
+      onClick={[Function]}
+    >
+      <WithStyles(ListItemText)
+        primary="Play"
+      />
+    </WithStyles(ListItem)>
+    <WithStyles(ListItem)
+      button={true}
+      onClick={[Function]}
+    >
+      <WithStyles(ListItemText)
+        primary="Pause"
+      />
+    </WithStyles(ListItem)>
+    <WithStyles(Divider) />
+    <WithStyles(ListItem)
+      button={true}
+      onClick={[Function]}
+    >
+      <WithStyles(ListItemIcon)>
+        <GithubIcon />
+      </WithStyles(ListItemIcon)>
+      <WithStyles(ListItemText)
+        primary="Github repository"
+      />
+    </WithStyles(ListItem)>
+  </WithStyles(List)>
 </div>
 `;

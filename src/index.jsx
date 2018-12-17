@@ -10,6 +10,8 @@ class OpenPlayer {
   }
 
   constructor(container, config) {
+    this.createVideoElement();
+
     this.container = container;
     this.config = config;
     this.onLoad = this.onLoad.bind(this);
@@ -19,6 +21,14 @@ class OpenPlayer {
 
   onLoad(playerComponent) {
     this.playerComponent = playerComponent;
+  }
+
+  createVideoElement() {
+    const videoElement = document.createElement('video');
+
+    videoElement.setAttribute('autoplay', true);
+    videoElement.load();
+    this.videoElement = videoElement;
   }
 
   loadVideo(config) {
@@ -37,7 +47,7 @@ class OpenPlayer {
   renderApp() {
     ReactDOM.render(
       <div style={OpenPlayer.mainDivStyle}>
-        <App config={this.config} onLoad={this.onLoad} />
+        <App videoElement={this.videoElement} config={this.config} onLoad={this.onLoad} />
       </div>,
       this.container,
     );

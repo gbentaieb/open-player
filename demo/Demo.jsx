@@ -1,11 +1,31 @@
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import PropTypes from 'prop-types';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { createMuiTheme, withStyles } from '@material-ui/core/styles';
 import Header from './components/header/Header';
 import ToolBar from './components/toolbar/Toolbar';
 import PlayerContainer from './components/playercontainer/PlayerContainer';
-import style from './Demo.css';
+
+const defaultTheme = createMuiTheme({
+  typography: {
+    useNextVariants: true,
+  },
+});
+
+const styles = {
+  playerContainer: {
+    width: '80%',
+    height: '80%',
+    margin: 'auto',
+  },
+};
 
 class App extends Component {
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+    // loadVideo: PropTypes.func.isRequired,
+  };
+
   constructor(...args) {
     super(...args);
     this.loadVideo = this.loadVideo.bind(this);
@@ -22,13 +42,15 @@ class App extends Component {
   }
 
   render() {
+    const { classes } = this.props;
+
     return (
       <div className="App">
-        <MuiThemeProvider>
+        <MuiThemeProvider theme={defaultTheme}>
           <div>
             <Header />
             <ToolBar loadVideo={this.loadVideo} />
-            <div className={style.PlayerContainer}>
+            <div className={classes.PlayerContainer}>
               <PlayerContainer ref={(c) => { this.playerContainer = c; }} />
             </div>
           </div>
@@ -38,4 +60,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withStyles(styles)(App);

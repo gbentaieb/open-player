@@ -4,6 +4,7 @@ import CorePlayer from './CorePlayer';
 
 const defaultProps = {
   RxPlayer: FakeRxPlayer,
+  videoElement: document.createElement('video'),
   playRequested: true,
   setPlayerState: () => {},
 };
@@ -26,9 +27,9 @@ describe('CorePlayer react cycle', () => {
   test('CorePlayer > componentDidMount > video properties', () => {
     const wrapper = mount(<CorePlayer {...defaultProps} />);
     const instance = wrapper.instance();
-    expect(instance.videoElement.controls).toEqual(false);
-    expect(instance.videoElement.disableRemotePlayback).toEqual(true);
-    expect(instance.videoElement.playsinline).toEqual('');
+    expect(instance.props.videoElement.controls).toEqual(false);
+    expect(instance.props.videoElement.disableRemotePlayback).toEqual(true);
+    expect(instance.props.videoElement.playsinline).toEqual('');
   });
 
   test('CorePlayer > componentWillReceiveProps > video url', () => {

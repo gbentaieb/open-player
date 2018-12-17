@@ -1,31 +1,27 @@
 import React from 'react';
 import { spy } from 'sinon';
-import TextField from 'material-ui/TextField/TextField';
-import Toolbar from './Toolbar';
-import presets from '../../presets';
-import { MuiMountWithContext } from '../../../test/utils';
+import TextField from '@material-ui/core/TextField';
+import { ToolBar } from './Toolbar';
+
+const defaultProps = {
+  classes: {},
+  loadVideo: () => {},
+};
 
 describe('test demo toolbar', () => {
   test('Toolbar > Snapshot', () => {
-    const wrapper = shallow(<Toolbar loadVideo={() => {}} />);
+    const wrapper = shallow(<ToolBar {...defaultProps} />);
     expect(wrapper).toMatchSnapshot();
   });
 
-  test('Toolbar > handleChange', () => {
-    const wrapper = shallow(<Toolbar loadVideo={() => {}} />);
-    expect(wrapper.state('value')).toEqual(presets[1].value);
-    wrapper.instance().handleChange('', '', 'test');
-    expect(wrapper.state('value')).toEqual('test');
-  });
-
   test('Toolbar > text field disabled', () => {
-    const wrapper = MuiMountWithContext(<Toolbar loadVideo={() => {}} />);
+    const wrapper = mount(<ToolBar {...defaultProps} />);
     const textField = wrapper.find(TextField);
     expect(textField.length).toEqual(0);
   });
 
   test('Toolbar > text field enabled', () => {
-    const wrapper = MuiMountWithContext(<Toolbar loadVideo={() => {}} />);
+    const wrapper = mount(<ToolBar {...defaultProps} />);
     wrapper.setState({ value: null });
     const textField = wrapper.find(TextField);
     expect(textField.length).toEqual(1);
@@ -33,8 +29,9 @@ describe('test demo toolbar', () => {
 
   test('Toolbar > onLoadClicked with value', () => {
     const loadVideo = spy();
+    const props = { ...defaultProps, loadVideo };
     const value = 'www.test.com/test.mp4';
-    const wrapper = MuiMountWithContext(<Toolbar loadVideo={loadVideo} />);
+    const wrapper = mount(<ToolBar {...props} />);
     wrapper.setState({ value });
     wrapper.instance().onLoadClicked();
     expect(loadVideo.calledWith(value)).toEqual(true);
@@ -42,11 +39,46 @@ describe('test demo toolbar', () => {
 
   test('Toolbar > onLoadClicked without value', () => {
     const loadVideo = spy();
-    const value = 'www.test.com/test.mp4';
-    const wrapper = MuiMountWithContext(<Toolbar loadVideo={loadVideo} />);
-    wrapper.setState({ value: null });
-    wrapper.instance().TextField.getInputNode().value = value;
+    const props = { ...defaultProps, loadVideo };
+    const textFieldValue = 'www.test.com/test.mp4';
+    const wrapper = mount(<ToolBar {...props} />);
+    wrapper.setState({ value: null, textFieldValue });
     wrapper.instance().onLoadClicked();
-    expect(loadVideo.calledWith(value)).toEqual(true);
+    expect(loadVideo.calledWith(textFieldValue)).toEqual(true);
+  });
+
+  test('Tollbar > handleClickListItem', () => {
+    const wrapper = mount(<ToolBar {...defaultProps} />);
+    const currentTarget = document.createElement('div');
+    wrapper.instance().handleClickListItem({ currentTarget });
+    expect(wrapper.state('anchorEl')).toBe(currentTarget);
+  });
+
+  test('Tollbar > handleMenuClose', () => {
+    const wrapper = mount(<ToolBar {...defaultProps} />);
+    const currentTarget = null;
+    wrapper.setState({ anchorEl: document.createElement('div') });
+    wrapper.instance().handleMenuClose();
+    expect(wrapper.state('anchorEl')).toBe(currentTarget);
+  });
+
+  test('Tollbar > handleMenuItemClick', () => {
+    const wrapper = mount(<ToolBar {...defaultProps} />);
+    const index = 1;
+    const label = 'foo';
+    const value = 'bar';
+    wrapper.setState({ anchorEl: document.createElement('div') });
+    wrapper.instance().handleMenuItemClick(index, label, value);
+    expect(wrapper.state('selectedIndex')).toBe(index);
+    expect(wrapper.state('label')).toBe(label);
+    expect(wrapper.state('value')).toBe(value);
+    expect(wrapper.state('anchorEl')).toBe(null);
+  });
+
+  test('Tollbar > handleTextFieldChange', () => {
+    const wrapper = mount(<ToolBar {...defaultProps} />);
+    const textFieldValue = 'foo';
+    wrapper.instance().handleTextFieldChange({ target: { value: textFieldValue } });
+    expect(wrapper.state('textFieldValue')).toBe(textFieldValue);
   });
 });

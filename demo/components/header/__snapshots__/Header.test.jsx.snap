@@ -1,28 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Demo header test Header > Snapshot 1`] = `
-<div
-  className="Header"
->
-  <AppBar
-    iconClassNameRight="muidocs-icon-navigation-expand-more"
-    onLeftIconButtonClick={[Function]}
-    showMenuIconButton={true}
-    title="Open Player Demo"
-    zDepth={1}
-  />
-  <Drawer
-    disableSwipeToOpen={false}
-    docked={true}
-    open={false}
-    openSecondary={false}
-    swipeAreaWidth={30}
-    width={null}
-    zDepth={2}
+<div>
+  <WithStyles(AppBar)
+    position="static"
   >
-    <SidePanel
+    <WithStyles(Toolbar)>
+      <WithStyles(IconButton)
+        aria-label="Menu"
+        color="inherit"
+        onClick={[Function]}
+      >
+        <pure(MenuIcon) />
+      </WithStyles(IconButton)>
+      <WithStyles(Typography)
+        color="inherit"
+        variant="h6"
+      >
+        Open Player Demo
+      </WithStyles(Typography)>
+    </WithStyles(Toolbar)>
+  </WithStyles(AppBar)>
+  <WithStyles(Drawer)
+    anchor="left"
+    open={false}
+  >
+    <WithStyles(SidePanel)
       onClickOutside={[Function]}
     />
-  </Drawer>
+  </WithStyles(Drawer)>
 </div>
 `;

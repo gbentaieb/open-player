@@ -2,7 +2,6 @@
 
 exports[`ControlsContainer snapshot ControlsContainer > Snapshot 1`] = `
 <ControlsContainer
-  hoverColor="white"
   isPlaying={false}
   requestPlay={[Function]}
   store={

@@ -8,11 +8,12 @@ const store = createReduxStore();
 
 const App = props => (
   <Provider store={store}>
-    <Player config={props.config} onLoad={props.onLoad} />
+    <Player videoElement={props.videoElement} config={props.config} onLoad={props.onLoad} />
   </Provider>
 );
 
 App.propTypes = {
+  videoElement: PropTypes.object.isRequired,
   config: PropTypes.object.isRequired,
   onLoad: PropTypes.func.isRequired,
 };

@@ -11,7 +11,6 @@ class PlayPauseButton extends Component {
   static propTypes = {
     onClick: PropTypes.func.isRequired,
     isPlaying: PropTypes.bool.isRequired,
-    hoverColor: PropTypes.string.isRequired,
   }
 
   static defaultProps = {
@@ -24,7 +23,6 @@ class PlayPauseButton extends Component {
         <Button
           onClick={this.props.onClick}
           glyph={this.props.isPlaying ? PAUSE_GLYPH : PLAY_GLYPH}
-          hoverColor={this.props.hoverColor}
         />
       </div>
     );

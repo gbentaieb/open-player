@@ -6,9 +6,12 @@ exports[`CorePlayer snapshot CorePlayer > Snapshot 1`] = `
   playRequested={true}
   setPlayerState={[Function]}
   url=""
+  videoElement={
+    <video
+      class="undefined"
+    />
+  }
 >
-  <div>
-    <video />
-  </div>
+  <div />
 </CorePlayer>
 `;

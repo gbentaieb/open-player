@@ -1,10 +1,10 @@
-/* eslint-disable no-debugger */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './CorePlayer.css';
 
 class CorePlayer extends Component {
   static propTypes = {
+    videoElement: PropTypes.object.isRequired,
     RxPlayer: PropTypes.func.isRequired,
     url: PropTypes.string,
     playRequested: PropTypes.bool.isRequired,
@@ -18,6 +18,7 @@ class CorePlayer extends Component {
   componentDidMount() {
     const { url } = this.props;
 
+    this.insertVideoElement();
     this.setVideoElementProperties();
     this.createRxPlayer();
 
@@ -48,12 +49,6 @@ class CorePlayer extends Component {
     }
   }
 
-  setVideoElementProperties() {
-    this.videoElement.controls = false;
-    this.videoElement.disableRemotePlayback = true;
-    this.videoElement.playsinline = '';
-  }
-
   getLoadVideoOptions = ({ url }) => (
     {
       url,
@@ -62,9 +57,23 @@ class CorePlayer extends Component {
     }
   )
 
+  setVideoElementProperties() {
+    const { videoElement } = this.props;
+
+    videoElement.className = styles.videoElement;
+    videoElement.controls = false;
+    videoElement.disableRemotePlayback = true;
+    videoElement.playsinline = '';
+  }
+
+  insertVideoElement() {
+    const { videoElement } = this.props;
+    this.videoContainer.appendChild(videoElement);
+  }
+
   createRxPlayer() {
     this.rxPlayer = new this.props.RxPlayer({
-      videoElement: this.videoElement,
+      videoElement: this.props.videoElement,
       limitVideoWidth: true,
       throttleWhenHidden: true,
     });
@@ -74,12 +83,7 @@ class CorePlayer extends Component {
 
   render() {
     return (
-      <div>
-        <video
-          className={styles.video}
-          ref={(v) => { this.videoElement = v; }}
-        />
-      </div>
+      <div ref={(c) => { this.videoContainer = c; }} />
     );
   }
 }

@@ -1,12 +1,14 @@
 import React from 'react';
-import Button from './Button';
-
-import { MuiMountWithContext } from '../../../../../test/utils';
+import { Button } from './Button';
 
 const defaultProps = {
   onClick: () => {},
-  glyph: {},
-  hoverColor: '00BCD4',
+  glyph: {
+    node: {
+      innerHTML: '<path d="abcd"></path>',
+    },
+  },
+  classes: {},
 };
 
 describe('Button snapshot', () => {
@@ -17,16 +19,10 @@ describe('Button snapshot', () => {
 });
 
 describe('Button methods', () => {
-  test('Button > addHoverColor', () => {
-    const wrapper = MuiMountWithContext(<Button {...defaultProps} />);
-    wrapper.instance().addHoverColor();
-    expect(wrapper.instance().state.iconColor).toEqual(wrapper.instance().props.hoverColor);
-  });
-
-  test('Button > removeHoverColor', () => {
-    const wrapper = MuiMountWithContext(<Button {...defaultProps} />);
-    wrapper.instance().addHoverColor();
-    wrapper.instance().removeHoverColor();
-    expect(wrapper.instance().state.iconColor).toEqual(wrapper.instance().props.color);
+  test('Button > setIsHovered', () => {
+    const wrapper = shallow(<Button {...defaultProps} />);
+    expect(wrapper.state('isHovered')).toEqual(false);
+    wrapper.instance().setIsHovered(true);
+    expect(wrapper.state('isHovered')).toEqual(true);
   });
 });
