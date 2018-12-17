@@ -54,4 +54,5 @@ class OpenPlayer {
   }
 }
 
-module.exports = OpenPlayer;
+// eslint-disable-next-line import/prefer-default-export
+export { OpenPlayer };
