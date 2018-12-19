@@ -1,10 +1,7 @@
 {
-  "app.css": "static/css/app.678ee583.css",
-  "app.css.map": "static/css/app.678ee583.css.map",
-  "app.js": "static/js/app.5325e7e2.js",
-  "app.js.map": "static/js/app.5325e7e2.js.map",
-  "demo.css": "static/css/demo.c978845f.css",
-  "demo.css.map": "static/css/demo.c978845f.css.map",
-  "demo.js": "static/js/demo.aae50799.js",
-  "demo.js.map": "static/js/demo.aae50799.js.map"
+  "app.js": "bundle-app.js",
+  "app.js.map": "bundle-app.js.map",
+  "demo.js": "bundle-demo.js",
+  "demo.js.map": "bundle-demo.js.map",
+  "index.html": "index.html"
 }
