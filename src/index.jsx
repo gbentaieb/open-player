@@ -36,6 +36,10 @@ class OpenPlayer {
     this.renderApp();
   }
 
+  setMainColor(color) {
+    this.playerComponent.setMainColor(color);
+  }
+
   play() {
     this.playerComponent.requestPlay(true);
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { spy } from 'sinon';
+import jest from 'jest-mock';
 import TextField from '@material-ui/core/TextField';
 import { ToolBar } from './Toolbar';
 
@@ -28,23 +28,23 @@ describe('test demo toolbar', () => {
   });
 
   test('Toolbar > onLoadClicked with value', () => {
-    const loadVideo = spy();
+    const loadVideo = jest.fn();
     const props = { ...defaultProps, loadVideo };
     const value = 'www.test.com/test.mp4';
     const wrapper = mount(<ToolBar {...props} />);
     wrapper.setState({ value });
     wrapper.instance().onLoadClicked();
-    expect(loadVideo.calledWith(value)).toEqual(true);
+    expect(loadVideo).toHaveBeenCalledWith(value);
   });
 
   test('Toolbar > onLoadClicked without value', () => {
-    const loadVideo = spy();
+    const loadVideo = jest.fn();
     const props = { ...defaultProps, loadVideo };
     const textFieldValue = 'www.test.com/test.mp4';
     const wrapper = mount(<ToolBar {...props} />);
     wrapper.setState({ value: null, textFieldValue });
     wrapper.instance().onLoadClicked();
-    expect(loadVideo.calledWith(textFieldValue)).toEqual(true);
+    expect(loadVideo).toHaveBeenCalledWith(textFieldValue);
   });
 
   test('Tollbar > handleClickListItem', () => {

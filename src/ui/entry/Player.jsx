@@ -28,6 +28,10 @@ class Player extends Component {
     store: PropTypes.object,
   };
 
+  state = {
+    theme: createMuiTheme(defaultTheme),
+  }
+
   componentDidMount() {
     const { config } = this.props;
     this.context.store.dispatch(setConfig(config));
@@ -42,13 +46,26 @@ class Player extends Component {
     }
   }
 
+  setMainColor(color) {
+    const palette = {
+      primary: {
+        main: color,
+      },
+    };
+
+    this.setState(state => ({
+      ...state,
+      theme: createMuiTheme({ ...defaultTheme, palette }),
+    }));
+  }
+
   requestPlay(play) {
     this.context.store.dispatch(requestPlay(play));
   }
 
   render() {
     return (
-      <MuiThemeProvider theme={defaultTheme}>
+      <MuiThemeProvider theme={this.state.theme}>
         <div>
           <div className={style.ControlsWrapper}>
             <ControlsContainer />

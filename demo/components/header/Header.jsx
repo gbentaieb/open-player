@@ -26,6 +26,7 @@ const styles = {
 class Header extends Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
+    setMainColor: PropTypes.func.isRequired,
   };
 
   state = {
@@ -57,7 +58,10 @@ class Header extends Component {
           </Toolbar>
         </AppBar>
         <Drawer anchor="left" open={isBurgerOpen}>
-          <SidePanel onClickOutside={this.closeBurger} />
+          <SidePanel
+            onClickOutside={this.closeBurger}
+            setMainColor={this.props.setMainColor}
+          />
         </Drawer>
       </div>
     );

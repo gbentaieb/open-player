@@ -22,6 +22,75 @@ exports[`test demo sidepanel SidePanel > Snapshot 1`] = `
       onClick={[Function]}
     >
       <WithStyles(ListItemText)
+        primary="Set main color"
+      />
+      <pure(ExpandMoreIcon) />
+    </WithStyles(ListItem)>
+    <WithStyles(Collapse)
+      in={false}
+      timeout="auto"
+      unmountOnExit={true}
+    >
+      <WithStyles(List)
+        component="div"
+        disablePadding={true}
+      >
+        <WithStyles(ListItem)
+          button={true}
+          onClick={[Function]}
+        >
+          <WithStyles(ListItemIcon)>
+            <pure(StarRateIcon) />
+          </WithStyles(ListItemIcon)>
+          <WithStyles(ListItemText)
+            inset={true}
+            primary="red"
+          />
+        </WithStyles(ListItem)>
+        <WithStyles(ListItem)
+          button={true}
+          onClick={[Function]}
+        >
+          <WithStyles(ListItemIcon)>
+            <pure(StarRateIcon) />
+          </WithStyles(ListItemIcon)>
+          <WithStyles(ListItemText)
+            inset={true}
+            primary="blue"
+          />
+        </WithStyles(ListItem)>
+        <WithStyles(ListItem)
+          button={true}
+          onClick={[Function]}
+        >
+          <WithStyles(ListItemIcon)>
+            <pure(StarRateIcon) />
+          </WithStyles(ListItemIcon)>
+          <WithStyles(ListItemText)
+            inset={true}
+            primary="green"
+          />
+        </WithStyles(ListItem)>
+        <WithStyles(ListItem)
+          button={true}
+          onClick={[Function]}
+        >
+          <WithStyles(ListItemIcon)>
+            <pure(StarRateIcon) />
+          </WithStyles(ListItemIcon)>
+          <WithStyles(ListItemText)
+            inset={true}
+            primary="random"
+          />
+        </WithStyles(ListItem)>
+      </WithStyles(List)>
+    </WithStyles(Collapse)>
+    <WithStyles(Divider) />
+    <WithStyles(ListItem)
+      button={true}
+      onClick={[Function]}
+    >
+      <WithStyles(ListItemText)
         primary="Play"
       />
     </WithStyles(ListItem)>
@@ -47,4 +116,19 @@ exports[`test demo sidepanel SidePanel > Snapshot 1`] = `
     </WithStyles(ListItem)>
   </WithStyles(List)>
 </div>
+`;
+
+exports[`test demo sidepanel SidePanel > Snapshot 2`] = `
+<WithStyles(ListItem)
+  button={true}
+  onClick={[Function]}
+>
+  <WithStyles(ListItemIcon)>
+    <pure(StarRateIcon) />
+  </WithStyles(ListItemIcon)>
+  <WithStyles(ListItemText)
+    inset={true}
+    primary="bar"
+  />
+</WithStyles(ListItem)>
 `;

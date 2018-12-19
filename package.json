@@ -43,6 +43,7 @@
     "identity-obj-proxy": "^3.0.0",
     "install": "^0.12.2",
     "jest": "^23.6.0",
+    "jest-mock": "^23.2.0",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
@@ -57,7 +58,6 @@
     "redux": "^3.7.2",
     "redux-test-utils": "^0.2.2",
     "rx-player": "^3.10.0",
-    "sinon": "^4.2.2",
     "style-loader": "0.19.0",
     "stylelint": "^8.4.0",
     "stylelint-config-standard": "^18.0.0",
@@ -153,7 +153,9 @@
       "mount": true,
       "OpenPlayer": true,
       "__DEV__": true,
-      "describe": true
+      "describe": true,
+      "beforeEach": true,
+      "afterEach": true
     }
   }
 }

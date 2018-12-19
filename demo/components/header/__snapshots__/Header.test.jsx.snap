@@ -27,6 +27,7 @@ exports[`Demo header test Header > Snapshot 1`] = `
   >
     <WithStyles(SidePanel)
       onClickOutside={[Function]}
+      setMainColor={[Function]}
     />
   </WithStyles(Drawer)>
 </div>

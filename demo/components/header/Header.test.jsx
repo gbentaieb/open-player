@@ -3,6 +3,7 @@ import { Header } from './Header';
 
 const defaultProps = {
   classes: {},
+  setMainColor: () => {},
 };
 
 describe('Demo header test', () => {

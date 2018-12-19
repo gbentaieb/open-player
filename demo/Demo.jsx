@@ -6,11 +6,11 @@ import Header from './components/header/Header';
 import ToolBar from './components/toolbar/Toolbar';
 import PlayerContainer from './components/playercontainer/PlayerContainer';
 
-const defaultTheme = createMuiTheme({
+const defaultTheme = {
   typography: {
     useNextVariants: true,
   },
-});
+};
 
 const styles = {
   playerContainer: {
@@ -23,12 +23,29 @@ const styles = {
 class App extends Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
-    // loadVideo: PropTypes.func.isRequired,
   };
 
   constructor(...args) {
     super(...args);
     this.loadVideo = this.loadVideo.bind(this);
+    this.setMainColor = this.setMainColor.bind(this);
+  }
+
+  state = {
+    theme: createMuiTheme(defaultTheme),
+  }
+
+  setMainColor(color) {
+    const palette = {
+      primary: {
+        main: color,
+      },
+    };
+
+    this.setState(state => ({
+      ...state,
+      theme: createMuiTheme({ ...defaultTheme, palette }),
+    }));
   }
 
   loadVideo(url) {
@@ -46,9 +63,9 @@ class App extends Component {
 
     return (
       <div className="App">
-        <MuiThemeProvider theme={defaultTheme}>
+        <MuiThemeProvider theme={this.state.theme}>
           <div>
-            <Header />
+            <Header setMainColor={this.setMainColor} />
             <ToolBar loadVideo={this.loadVideo} />
             <div className={classes.PlayerContainer}>
               <PlayerContainer ref={(c) => { this.playerContainer = c; }} />
@@ -60,4 +77,5 @@ class App extends Component {
   }
 }
 
+export { App };
 export default withStyles(styles)(App);
