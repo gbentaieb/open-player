@@ -32,6 +32,14 @@ class Player extends Component {
     theme: createMuiTheme(defaultTheme),
   }
 
+  componentWillMount() {
+    const { config } = this.props;
+
+    if (config.mainColor) {
+      this.setMainColor(config.mainColor);
+    }
+  }
+
   componentDidMount() {
     const { config } = this.props;
     this.context.store.dispatch(setConfig(config));
