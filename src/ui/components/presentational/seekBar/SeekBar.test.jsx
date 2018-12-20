@@ -16,6 +16,12 @@ describe('SeekBar snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  test('SeekBar > convertTime', () => {
+    expect(SeekBar.convertTime(0)).toEqual('00:00');
+    expect(SeekBar.convertTime(61)).toEqual('01:01');
+    expect(SeekBar.convertTime(3601)).toEqual('01:00:01');
+  });
+
   test('SeekBar > getSliderValue', () => {
     const wrapper = shallow(<SeekBar {...defaultProps} />);
     const result = wrapper.instance().getSliderValue();

@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Slider from '@material-ui/lab/Slider';
+import { Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
   root: {
+    display: 'flex',
+    width: '100%',
+  },
+  sliderContainer: {
+    display: 'flex',
     width: '100%',
     margin: 'auto',
     padding: '0px 5px 0px 5px',
+  },
+  timeLabel: {
+    margin: 'auto',
+    padding: '0px 5px 0px 5px',
+    color: 'white',
+    fontSize: '0.7rem',
   },
   slider: {
     padding: '10px 0px 10px 0px',
@@ -33,6 +45,28 @@ class SeekBar extends Component {
     endTime: Infinity,
   }
 
+  static convertTime(seconds) {
+    const hours = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds / 60) % 60);
+    const secs = Math.floor(seconds % 60);
+
+    const stdHours = hours > 0 && hours < 10
+      ? `0${hours}`
+      : hours;
+    const stdMins = mins < 10
+      ? `0${mins}`
+      : mins;
+    const stdSecs = secs < 10
+      ? `0${secs}`
+      : secs;
+
+    const hoursStr = stdHours ? `${stdHours}:` : '';
+    const minsStr = `${stdMins}:`;
+    const secsStr = stdSecs;
+
+    return `${hoursStr}${minsStr}${secsStr}`;
+  }
+
   constructor(props) {
     super(props);
     this.handleSliderValueChange = this.handleSliderValueChange.bind(this);
@@ -50,16 +84,28 @@ class SeekBar extends Component {
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, currentTime, endTime } = this.props;
 
     return (
       <div className={classes.root}>
-        <Slider
-          classes={{ container: classes.slider, trackAfter: classes.sliderTrackAfter }}
-          value={this.getSliderValue()}
-          aria-labelledby="label"
-          onChange={this.handleSliderValueChange}
-        />
+        <div className={classes.timeLabel}>
+          <Typography variant="inherit" color="inherit">
+            { SeekBar.convertTime(currentTime) }
+          </Typography>
+        </div>
+        <div className={classes.sliderContainer}>
+          <Slider
+            classes={{ container: classes.slider, trackAfter: classes.sliderTrackAfter }}
+            value={this.getSliderValue()}
+            aria-labelledby="label"
+            onChange={this.handleSliderValueChange}
+          />
+        </div>
+        <div className={classes.timeLabel}>
+          <Typography variant="inherit" color="inherit">
+            {`-${SeekBar.convertTime(endTime - currentTime)}`}
+          </Typography>
+        </div>
       </div>
     );
   }

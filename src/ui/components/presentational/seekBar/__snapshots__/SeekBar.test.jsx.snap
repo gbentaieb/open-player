@@ -2,16 +2,34 @@
 
 exports[`SeekBar snapshot SeekBar > Snapshot 1`] = `
 <div>
-  <WithStyles(Slider)
-    aria-labelledby="label"
-    classes={
-      Object {
-        "container": undefined,
-        "trackAfter": undefined,
+  <div>
+    <WithStyles(Typography)
+      color="inherit"
+      variant="inherit"
+    >
+      00:01
+    </WithStyles(Typography)>
+  </div>
+  <div>
+    <WithStyles(Slider)
+      aria-labelledby="label"
+      classes={
+        Object {
+          "container": undefined,
+          "trackAfter": undefined,
+        }
       }
-    }
-    onChange={[Function]}
-    value={50}
-  />
+      onChange={[Function]}
+      value={50}
+    />
+  </div>
+  <div>
+    <WithStyles(Typography)
+      color="inherit"
+      variant="inherit"
+    >
+      -00:01
+    </WithStyles(Typography)>
+  </div>
 </div>
 `;
