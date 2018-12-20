@@ -98,6 +98,7 @@ class CorePlayer extends Component {
     videoElement.controls = false;
     videoElement.disableRemotePlayback = true;
     videoElement.playsinline = '';
+    videoElement.align = 'middle';
   }
 
   insertVideoElement() {
@@ -127,7 +128,10 @@ class CorePlayer extends Component {
 
   render() {
     return (
-      <div ref={(c) => { this.videoContainer = c; }} />
+      <div
+        className={styles.videoContainer}
+        ref={(c) => { this.videoContainer = c; }}
+      />
     );
   }
 }
