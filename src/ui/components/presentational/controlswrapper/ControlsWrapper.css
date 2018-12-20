@@ -1,5 +1,8 @@
 .ControlsWrapper {
   position: absolute;
+  display: flex;
+  text-align: center;
+  justify-content: center;
   bottom: 0;
   height: 80px;
   width: 100%;

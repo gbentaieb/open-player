@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SeekBar snapshot SeekBar > Snapshot 1`] = `
+<div>
+  <WithStyles(Slider)
+    aria-labelledby="label"
+    classes={
+      Object {
+        "container": undefined,
+        "trackAfter": undefined,
+      }
+    }
+    onChange={[Function]}
+    value={50}
+  />
+</div>
+`;

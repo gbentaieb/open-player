@@ -20,3 +20,23 @@ export function setPlayerState(state) {
     payload: state,
   };
 }
+
+/**
+ * Seek with rx player
+ */
+export function seekTo(time) {
+  return {
+    type: types.SEEK_TO,
+    payload: time,
+  };
+}
+
+/**
+ * Set times from rx player
+ */
+export function setPlayerTimes(times) {
+  return {
+    type: types.SET_PLAYER_TIMES,
+    payload: times,
+  };
+}

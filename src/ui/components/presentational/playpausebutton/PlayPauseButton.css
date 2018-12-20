@@ -1,7 +1,4 @@
 .PlayPauseButton {
   position: relative;
-  top: 50%;
-  margin-left: 10px;
-  margin-right: 10px;
-  transform: translateY(-50%);
+  margin: auto;
 }

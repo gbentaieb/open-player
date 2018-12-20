@@ -3,6 +3,10 @@ import * as types from '../constants/ActionsTypes';
 const initialState = {
   playerState: 'STOPPED',
   playRequested: true,
+  currentTime: 0,
+  startTime: 0,
+  endTime: Infinity,
+  seekingTime: 0,
 };
 
 export default function core(state = initialState, action) {
@@ -17,6 +21,20 @@ export default function core(state = initialState, action) {
       return {
         ...state,
         playerState: action.payload,
+      };
+
+    case types.SEEK_TO:
+      return {
+        ...state,
+        seekingTime: action.payload,
+      };
+
+    case types.SET_PLAYER_TIMES:
+      return {
+        ...state,
+        currentTime: action.payload.currentTime,
+        startTime: action.payload.startTime,
+        endTime: action.payload.endTime,
       };
 
     default:

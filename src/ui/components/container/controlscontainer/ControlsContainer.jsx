@@ -1,49 +1,22 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import { connect } from 'react-redux';
 import ControlsWrapper from '../../presentational/controlswrapper/ControlsWrapper';
-import PlayPauseButton from '../../presentational/playpausebutton/PlayPauseButton';
 
-import { requestPlay } from '../../../actions/CoreActions';
+import PlayPauseButtonContainer from '../playPauseButton/PlayPauseButtonContainer';
+import SeekBarContainer from '../seekBar/SeekBarContainer';
 
-import { isPlaying } from '../../../utils/playerStates';
-
-function mapStateToProps(state) {
-  return {
-    isPlaying: isPlaying(state.core.playerState),
-  };
+function mapStateToProps() {
+  return {};
 }
 
-class ControlsContainer extends Component {
-  static propTypes = {
-    isPlaying: PropTypes.bool.isRequired,
-    requestPlay: PropTypes.func.isRequired,
-  }
+const ControlsContainer = () => (
+  <ControlsWrapper>
+    <PlayPauseButtonContainer />
+    <SeekBarContainer />
+  </ControlsWrapper>
+);
 
-  static defaultProps = {
-    /* Add default props */
-  }
-
-  playPause = () => {
-    this.props.requestPlay(!this.props.isPlaying);
-  }
-
-  render() {
-    return (
-      <ControlsWrapper>
-        <PlayPauseButton
-          onClick={this.playPause}
-          isPlaying={this.props.isPlaying}
-        />
-        {/* <ProgressBar /> */}
-      </ControlsWrapper>
-    );
-  }
-}
 
 export default connect(
   mapStateToProps,
-  {
-    requestPlay,
-  },
 )(ControlsContainer);

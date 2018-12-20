@@ -2,8 +2,7 @@
 
 exports[`ControlsContainer snapshot ControlsContainer > Snapshot 1`] = `
 <ControlsContainer
-  isPlaying={false}
-  requestPlay={[Function]}
+  dispatch={[Function]}
   store={
     Object {
       "dispatch": [Function],

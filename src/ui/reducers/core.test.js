@@ -7,7 +7,14 @@ const dispatch = (type, payload) => coreReducer(undefined, { type, payload });
 describe('test config reducer', () => {
   test('Reducers > core > initial state', () => {
     const initialState = dispatch(null);
-    expect(initialState.playRequested).toEqual(true);
+    expect(initialState).toEqual({
+      playerState: 'STOPPED',
+      playRequested: true,
+      currentTime: 0,
+      startTime: 0,
+      endTime: Infinity,
+      seekingTime: 0,
+    });
   });
 
   test('Reducers > core > REQUEST_PLAY', () => {
@@ -20,5 +27,23 @@ describe('test config reducer', () => {
     const coreState = coreStates.PAUSED;
     const state = dispatch(types.SET_PLAYER_STATE, coreState);
     expect(state.playerState).toEqual(coreState);
+  });
+
+  test('Reducers > core > SEEK_TO', () => {
+    const seekingTime = 12;
+    const state = dispatch(types.SEEK_TO, seekingTime);
+    expect(state.seekingTime).toEqual(seekingTime);
+  });
+
+  test('Reducers > core > SET_PLAYER_TIMES', () => {
+    const times = {
+      startTime: 0,
+      endTime: 20,
+      currentTime: 12,
+    };
+    const state = dispatch(types.SET_PLAYER_TIMES, times);
+    expect(state.startTime).toEqual(times.startTime);
+    expect(state.endTime).toEqual(times.endTime);
+    expect(state.currentTime).toEqual(times.currentTime);
   });
 });
