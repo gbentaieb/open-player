@@ -1,12 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CorePlayerContainer CorePlayerContainer > Snapshot 1`] = `
-<CorePlayer
-  RxPlayer={[Function]}
-  playRequested={true}
-  seekingTime={0}
-  setPlayerState={[Function]}
-  setPlayerTimes={[Function]}
+exports[`PlayPauseButtonContainer snapshot PlayPauseButtonContainer > Snapshot 1`] = `
+<PlayPauseButtonContainer
+  isPlaying={false}
+  requestPlay={[Function]}
   store={
     Object {
       "dispatch": [Function],
@@ -40,7 +37,5 @@ exports[`CorePlayerContainer CorePlayerContainer > Snapshot 1`] = `
       "unsubscribe": undefined,
     }
   }
-  url="https://www.test.com/test.mp4"
-  videoElement={<video />}
 />
 `;

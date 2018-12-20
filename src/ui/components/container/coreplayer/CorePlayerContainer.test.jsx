@@ -1,8 +1,9 @@
 import React from 'react';
 import { createMockStore } from 'redux-test-utils';
+import RxPlayer from 'rx-player';
 
 import FakeRxPlayer from '../../../../../test/fakeRxPlayer';
-import CorePlayerContainer from './CorePlayerContainer';
+import CorePlayerContainer, { mapStateToProps } from './CorePlayerContainer';
 
 const defaultStore = {
   config: {
@@ -18,10 +19,27 @@ const defaultProps = {
   videoElement: document.createElement('video'),
 };
 
-describe('CorePlayerContainer snapshot', () => {
+describe('CorePlayerContainer', () => {
   test('CorePlayerContainer > Snapshot', () => {
     const store = createMockStore(defaultStore);
     const wrapper = shallow(<CorePlayerContainer store={store} {...defaultProps} />);
     expect(wrapper).toMatchSnapshot();
+  });
+
+  test('CorePlayerContainer > mapStateToProps', () => {
+    const url = 'https://test.mpd';
+    const playRequested = true;
+    const seekingTime = 12;
+    const state = {
+      config: { url },
+      core: { playRequested, seekingTime },
+    };
+
+    expect(mapStateToProps(state)).toEqual({
+      RxPlayer,
+      url,
+      playRequested,
+      seekingTime,
+    });
   });
 });

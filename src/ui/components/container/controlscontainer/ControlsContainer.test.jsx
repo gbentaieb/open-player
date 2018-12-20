@@ -20,29 +20,3 @@ describe('ControlsContainer snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
-
-describe('ControlsContainer methods', () => {
-  test('ControlsContainer > isPlaying when PAUSED', () => {
-    const store = createMockStore(
-      {
-        ...defaultStore,
-        core: { playerState: playerStates.PAUSED },
-      },
-    );
-    const wrapper = shallow(<ControlsContainer store={store} />);
-    const instance = wrapper.dive().instance();
-    expect(instance.props.isPlaying).toEqual(false);
-  });
-
-  test('ControlsContainer > isPlaying when PLAYING', () => {
-    const store = createMockStore(
-      {
-        ...defaultStore,
-        core: { playerState: playerStates.PLAYING },
-      },
-    );
-    const wrapper = shallow(<ControlsContainer store={store} />);
-    const instance = wrapper.dive().instance();
-    expect(instance.props.isPlaying).toEqual(true);
-  });
-});

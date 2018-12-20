@@ -9,10 +9,20 @@ class CorePlayer extends Component {
     url: PropTypes.string,
     playRequested: PropTypes.bool.isRequired,
     setPlayerState: PropTypes.func.isRequired,
+    setPlayerTimes: PropTypes.func.isRequired,
+    seekingTime: PropTypes.number,
   }
 
   static defaultProps = {
     url: '',
+    seekingTime: 0,
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.onPlayerStateChange = this.onPlayerStateChange.bind(this);
+    this.onPositionUpdate = this.onPositionUpdate.bind(this);
   }
 
   componentDidMount() {
@@ -21,10 +31,7 @@ class CorePlayer extends Component {
     this.insertVideoElement();
     this.setVideoElementProperties();
     this.createRxPlayer();
-
-    this.rxPlayer.addEventListener('playerStateChange', (event) => {
-      this.props.setPlayerState(event);
-    });
+    this.listenToRxPlayerEvent();
 
     if (url) {
       const options = this.getLoadVideoOptions({ url });
@@ -47,6 +54,33 @@ class CorePlayer extends Component {
         this.rxPlayer.pause();
       }
     }
+
+    if (nextProps.seekingTime !== this.props.seekingTime) {
+      this.rxPlayer.seekTo(nextProps.seekingTime);
+    }
+  }
+
+  componentWillUnmount() {
+    this.unlistenToRxPlayerEvent();
+    this.rxPlayer.dispose();
+  }
+
+  onPlayerStateChange(event) {
+    this.props.setPlayerState(event);
+  }
+
+  onPositionUpdate({ position, duration, liveGap }) {
+    const times = {
+      currentTime: position,
+      startTime: liveGap
+        ? (liveGap + position) - duration
+        : 0,
+      endTime: liveGap
+        ? position + liveGap
+        : duration,
+    };
+
+    this.props.setPlayerTimes(times);
   }
 
   getLoadVideoOptions = ({ url }) => (
@@ -79,6 +113,16 @@ class CorePlayer extends Component {
     });
 
     return this.rxPlayer;
+  }
+
+  listenToRxPlayerEvent() {
+    this.rxPlayer.addEventListener('playerStateChange', this.onPlayerStateChange);
+    this.rxPlayer.addEventListener('positionUpdate', this.onPositionUpdate);
+  }
+
+  unlistenToRxPlayerEvent() {
+    this.rxPlayer.removeEventListener('playerStateChange', this.onPlayerStateChange);
+    this.rxPlayer.removeEventListener('positionUpdate', this.onPositionUpdate);
   }
 
   render() {
