@@ -10,6 +10,7 @@ import CorePlayerContainer from '../components/container/coreplayer/CorePlayerCo
 import ControlsContainer from '../components/container/controlscontainer/ControlsContainer';
 
 import style from './Player.css';
+import SpinnerContainer from '../components/container/spinner/SpinnerContainer';
 
 const defaultTheme = createMuiTheme({
   typography: {
@@ -80,6 +81,9 @@ class Player extends Component {
           </div>
           <div className={style.CoreWrapper}>
             <CorePlayerContainer videoElement={this.props.videoElement} />
+          </div>
+          <div className={style.SpinnerWrapper}>
+            <SpinnerContainer />
           </div>
         </div>
       </MuiThemeProvider>
