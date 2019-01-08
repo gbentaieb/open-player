@@ -10,7 +10,7 @@ const defaultProps = {
   endTime: 2,
 };
 
-describe('SeekBar snapshot', () => {
+describe('SeekBar', () => {
   test('SeekBar > Snapshot', () => {
     const wrapper = shallow(<SeekBar {...defaultProps} />);
     expect(wrapper).toMatchSnapshot();

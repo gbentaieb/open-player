@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SeekBar snapshot SeekBar > Snapshot 1`] = `
+exports[`SeekBar SeekBar > Snapshot 1`] = `
 <div>
   <div>
     <WithStyles(Typography)
