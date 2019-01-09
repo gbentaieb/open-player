@@ -24,6 +24,7 @@ const styles = {
   },
   textFieldContainer: {
     display: 'flex',
+    marginBottom: '20px',
   },
   loadButton: {
     marginLeft: '10px',

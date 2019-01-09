@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import IconButton from '@material-ui/core/IconButton';
-import SvgIcon from '@material-ui/core/SvgIcon';
 import { withStyles } from '@material-ui/core';
 
 const styles = {
@@ -11,17 +10,10 @@ const styles = {
 };
 
 class Button extends Component {
-  static getSvgPath(glyph) {
-    const htmlPath = glyph.node.innerHTML;
-    const regex = /<path d="(.*)"><\/path>/;
-
-    return regex.exec(htmlPath)[1];
-  }
-
   static propTypes = {
     classes: PropTypes.object.isRequired,
     onClick: PropTypes.func.isRequired,
-    glyph: PropTypes.object.isRequired,
+    Icon: PropTypes.func.isRequired,
   }
 
   constructor(props) {
@@ -31,20 +23,6 @@ class Button extends Component {
 
   state = {
     isHovered: false,
-    svgPath: '',
-  }
-
-  componentWillMount() {
-    const svgPath = Button.getSvgPath(this.props.glyph);
-
-    this.setState(state => ({ ...state, svgPath }));
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.glyph !== this.props.glyph) {
-      const svgPath = Button.getSvgPath(nextProps.glyph);
-      this.setState(state => ({ ...state, svgPath }));
-    }
   }
 
   setIsHovered = (bool) => {
@@ -53,9 +31,9 @@ class Button extends Component {
 
   render() {
     const {
-      glyph,
       onClick,
       classes,
+      Icon,
     } = this.props;
 
     return (
@@ -68,9 +46,7 @@ class Button extends Component {
           onMouseEnter={() => this.setIsHovered(true)}
           onMouseLeave={() => this.setIsHovered(false)}
         >
-          <SvgIcon viewBox={glyph.viewBox}>
-            <path d={this.state.svgPath} />
-          </SvgIcon>
+          <Icon fontSize="large" />
         </IconButton>
       </div>
     );
