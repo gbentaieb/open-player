@@ -4,8 +4,9 @@
   text-align: center;
   justify-content: center;
   bottom: 0;
-  height: 80px;
-  width: 100%;
+  padding: 30px 5px 5px 5px;
+  height: 55px;
+  width: calc(100% - 10px);
   z-index: 10;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
 }

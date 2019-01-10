@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import PauseIcon from '@material-ui/icons/Pause';
-import PlayIcon from '@material-ui/icons/PlayArrow';
+import FullscreenIcon from '@material-ui/icons/Fullscreen';
+import ExitFullscreenIcon from '@material-ui/icons/FullscreenExit';
 
 import Button from '../button/Button';
 
-import style from './PlayPauseButton.css';
+import style from './FullscreenButton.css';
 
-class PlayPauseButton extends Component {
+class FullscreenButton extends Component {
   static propTypes = {
     onClick: PropTypes.func.isRequired,
-    isPlaying: PropTypes.bool.isRequired,
+    isFullscreen: PropTypes.bool.isRequired,
   }
 
   static defaultProps = {
@@ -22,11 +22,11 @@ class PlayPauseButton extends Component {
       <div className={style.PlayPauseButton}>
         <Button
           onClick={this.props.onClick}
-          Icon={this.props.isPlaying ? PauseIcon : PlayIcon}
+          Icon={this.props.isFullscreen ? ExitFullscreenIcon : FullscreenIcon}
         />
       </div>
     );
   }
 }
 
-export default PlayPauseButton;
+export default FullscreenButton;

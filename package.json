@@ -7,6 +7,7 @@
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.2.1",
     "@babel/plugin-proposal-function-bind": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
     "@babel/preset-react": "^7.0.0",
     "@material-ui/core": "^3.6.2",
@@ -59,6 +60,7 @@
     "redux": "^3.7.2",
     "redux-test-utils": "^0.2.2",
     "rx-player": "3.10.2",
+    "screenfull": "^4.0.0",
     "style-loader": "0.19.0",
     "stylelint": "^8.4.0",
     "stylelint-config-standard": "^18.0.0",
@@ -98,7 +100,8 @@
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
-      "<rootDir>/config/jest/jestsetup.js"
+      "<rootDir>/config/jest/jestsetup.js",
+      "<rootDir>/config/jest/jestTestPolyfills.js"
     ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
@@ -148,6 +151,7 @@
     "globals": {
       "window": true,
       "document": true,
+      "Element": true,
       "test": true,
       "expect": true,
       "shallow": true,

@@ -1,14 +1,14 @@
 import React from 'react';
-import PlayPauseButton from './PlayPauseButton';
+import FullscreenButton from './FullscreenButton';
 
 const defaultProps = {
   onClick: () => {},
-  isPlaying: true,
+  isFullscreen: true,
 };
 
 describe('PlayPauseButton snapshot', () => {
   test('PlayPauseButton > Snapshot', () => {
-    const wrapper = shallow(<PlayPauseButton {...defaultProps} />);
+    const wrapper = shallow(<FullscreenButton {...defaultProps} />);
     expect(wrapper).toMatchSnapshot();
   });
 });

@@ -11,6 +11,7 @@ import ControlsContainer from '../components/container/controlscontainer/Control
 
 import style from './Player.css';
 import SpinnerContainer from '../components/container/spinner/SpinnerContainer';
+import FullscreenContainer from '../components/container/fullscreen/FullscreenContainer';
 
 const defaultTheme = createMuiTheme({
   typography: {
@@ -75,17 +76,19 @@ class Player extends Component {
   render() {
     return (
       <MuiThemeProvider theme={this.state.theme}>
-        <div>
-          <div className={style.ControlsWrapper}>
-            <ControlsContainer />
+        <FullscreenContainer >
+          <div>
+            <div className={style.ControlsWrapper}>
+              <ControlsContainer />
+            </div>
+            <div className={style.CoreWrapper}>
+              <CorePlayerContainer videoElement={this.props.videoElement} />
+            </div>
+            <div className={style.SpinnerWrapper}>
+              <SpinnerContainer />
+            </div>
           </div>
-          <div className={style.CoreWrapper}>
-            <CorePlayerContainer videoElement={this.props.videoElement} />
-          </div>
-          <div className={style.SpinnerWrapper}>
-            <SpinnerContainer />
-          </div>
-        </div>
+        </FullscreenContainer>
       </MuiThemeProvider>
     );
   }

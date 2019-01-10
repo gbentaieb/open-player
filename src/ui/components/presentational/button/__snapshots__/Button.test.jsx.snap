@@ -8,11 +8,9 @@ exports[`Button snapshot Button > Snapshot 1`] = `
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
   >
-    <WithStyles(SvgIcon)>
-      <path
-        d="abcd"
-      />
-    </WithStyles(SvgIcon)>
+    <Icon
+      fontSize="large"
+    />
   </WithStyles(IconButton)>
 </div>
 `;

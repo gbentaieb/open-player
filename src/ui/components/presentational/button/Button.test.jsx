@@ -3,11 +3,7 @@ import { Button } from './Button';
 
 const defaultProps = {
   onClick: () => {},
-  glyph: {
-    node: {
-      innerHTML: '<path d="abcd"></path>',
-    },
-  },
+  Icon: () => {},
   classes: {},
 };
 
