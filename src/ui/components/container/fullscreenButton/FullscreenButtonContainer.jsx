@@ -7,7 +7,7 @@ import FullscreenButton from '../../presentational/fullscreenbutton/FullscreenBu
 
 import logger from '../../../../utils/logger';
 
-function mapStateToProps(state) {
+export function mapStateToProps(state) {
   return {
     isFullscreen: state.fullscreen.isFullscreen,
     fullscreenContainer: state.fullscreen.container,

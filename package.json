@@ -100,7 +100,8 @@
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
-      "<rootDir>/config/jest/jestsetup.js"
+      "<rootDir>/config/jest/jestsetup.js",
+      "<rootDir>/config/jest/jestTestPolyfills.js"
     ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
@@ -150,6 +151,7 @@
     "globals": {
       "window": true,
       "document": true,
+      "Element": true,
       "test": true,
       "expect": true,
       "shallow": true,
