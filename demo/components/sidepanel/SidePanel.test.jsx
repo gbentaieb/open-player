@@ -1,5 +1,4 @@
 import React from 'react';
-import jest from 'jest-mock';
 import { SidePanel, getRandomColor } from './SidePanel';
 
 const defaultProps = {

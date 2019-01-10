@@ -6,12 +6,14 @@ import PlayPauseButtonContainer from '../playPauseButton/PlayPauseButtonContaine
 import SeekBarContainer from '../seekBar/SeekBarContainer';
 import FullscreenButtonContainer from '../fullscreenButton/FullscreenButtonContainer';
 
-function mapStateToProps() {
-  return {};
+export function mapStateToProps(state) {
+  return {
+    isActive: state.activity.isActive,
+  };
 }
 
-const ControlsContainer = () => (
-  <ControlsWrapper>
+const ControlsContainer = props => (
+  <ControlsWrapper {...props} >
     <PlayPauseButtonContainer />
     <SeekBarContainer />
     <FullscreenButtonContainer />

@@ -11,3 +11,6 @@ export const SET_PLAYER_TIMES = 'SET_PLAYER_TIMES';
 export const SET_IS_FULLSCREEN = 'SET_IS_FULLSCREEN';
 export const SET_FULLSCREEN_CONTAINER = 'SET_FULLSCREEN_CONTAINER';
 
+// Activity actions
+export const SET_IS_ACTIVE = 'SET_IS_ACTIVE';
+

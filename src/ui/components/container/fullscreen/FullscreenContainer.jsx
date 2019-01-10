@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as screenfull from 'screenfull';
 
 import { setIsFullscreen, setFullscreenContainer } from '../../../actions/FullscreenActions';
+import style from './FullscreenContainer.css';
 
 function mapStateToProps(state) {
   return {
@@ -51,7 +52,7 @@ class FullscreenContainer extends Component {
 
   render() {
     return (
-      <div ref={(c) => { this.container = c; }}>
+      <div className={style.fullscreenContainer} ref={(c) => { this.container = c; }}>
         {this.props.children}
       </div>
     );

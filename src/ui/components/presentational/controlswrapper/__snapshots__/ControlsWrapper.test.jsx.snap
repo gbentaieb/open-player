@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ControlsWrapper snapshot ControlsWrapper > Snapshot 1`] = `
-<div>
+<div
+  className="undefined"
+>
   <div />
 </div>
 `;

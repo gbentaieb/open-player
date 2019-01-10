@@ -1,5 +1,4 @@
 import React from 'react';
-import jest from 'jest-mock';
 import TextField from '@material-ui/core/TextField';
 import { ToolBar } from './Toolbar';
 
