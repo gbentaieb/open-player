@@ -48,7 +48,7 @@ After having installed OpenPlayer in your project, you can instanciate a player 
 
 - Your js file:
 ```javascript
-import OpenPlayer from 'open-player';
+import OpenPlayer from '@guilf/open-player';
 
 const container = document.getElementById('playerContainer');
 const config = {
