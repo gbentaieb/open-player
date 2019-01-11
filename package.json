@@ -1,7 +1,7 @@
 {
-  "name": "open-player",
+  "name": "@guilf/open-player",
   "author": "Guilf",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Open Source Video Player",
   "private": false,
   "homepage": "https://gbentaieb.github.io/open-player",
