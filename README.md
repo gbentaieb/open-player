@@ -1,5 +1,5 @@
-[![pipeline status](https://gitlab.com/guilf/open-player/badges/master/pipeline.svg)](https://gitlab.com/guilf/open-player/commits/master)
-[![coverage report](https://gitlab.com/guilf/open-player/badges/master/coverage.svg)](https://gitlab.com/guilf/open-player/commits/master)
+[![pipeline status](https://gitlab.com/guilf/open-player/badges/master/pipeline.svg)](https://gitlab.com/guilf/open-player/pipelines)
+[![coverage report](https://gitlab.com/guilf/open-player/badges/master/coverage.svg)](https://gitlab.com/guilf/open-player/pipelines)
 # open-player
 Open Player is an open source player to make video streaming easier !
 
