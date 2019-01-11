@@ -48,6 +48,10 @@ class OpenPlayer {
     this.playerComponent.requestPlay(false);
   }
 
+  destroy() {
+    ReactDOM.unmountComponentAtNode(this.container);
+  }
+
   renderApp() {
     ReactDOM.render(
       <div style={OpenPlayer.mainDivStyle}>

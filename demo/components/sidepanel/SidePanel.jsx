@@ -67,6 +67,13 @@ class SidePanel extends Component {
     if (window.$openPlayer) window.$openPlayer.setMainColor(color);
   }
 
+  static callDestroy() {
+    if (window.$openPlayer) {
+      window.$openPlayer.destroy();
+      delete window.$openPlayer;
+    }
+  }
+
   constructor(props) {
     super(props);
 
@@ -154,6 +161,9 @@ class SidePanel extends Component {
           </ListItem>
           <ListItem button onClick={SidePanel.callPause}>
             <ListItemText primary="Pause" />
+          </ListItem>
+          <ListItem button onClick={SidePanel.callDestroy}>
+            <ListItemText primary="Destroy" />
           </ListItem>
           <Divider />
           <ListItem button onClick={SidePanel.openGithubPage}>

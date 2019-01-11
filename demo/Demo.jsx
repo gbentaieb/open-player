@@ -51,12 +51,11 @@ class App extends Component {
   loadVideo(url) {
     const mainColor = this.state.theme.palette.primary.main;
 
-    if (this.openPlayer) {
-      this.openPlayer.loadVideo({ url, mainColor });
+    if (window.$openPlayer) {
+      window.$openPlayer.loadVideo({ url, mainColor });
     } else {
       const container = this.playerContainer.domContainer;
-      this.openPlayer = new OpenPlayer(container, { url, mainColor });
-      window.$openPlayer = this.openPlayer;
+      window.$openPlayer = new OpenPlayer(container, { url, mainColor });
     }
   }
 
