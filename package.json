@@ -1,9 +1,12 @@
 {
   "name": "open-player",
-  "version": "0.3.0",
+  "author": "Guilf",
+  "version": "0.4.0",
+  "description": "Open Source Video Player",
   "private": false,
   "homepage": "https://gbentaieb.github.io/open-player",
   "main": "./build/bundle-app.js",
+  "license": "Apache-2.0",
   "dependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.2.1",
@@ -92,7 +95,7 @@
     "validate": "yarn run lint && yarn test --no-watch",
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
-    "publish:npm": "yarn publish . --tag $npm_package_version && echo \"Successfully released version $npm_package_version!\"",
+    "publish:npm": "yarn publish . --non-interactive --tag $npm_package_version && echo \"Successfully released version $npm_package_version!\"",
     "preversion": "yarn run lint && yarn test --no-watch && yarn run build",
     "postversion": "git push --follow-tags --no-verify && yarn publish:npm && yarn deploy"
   },
