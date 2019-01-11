@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import { setIsActive } from '../../../actions/ActivityActions';
 
+import style from './ActivityDetectorContainer.css';
+
 export function mapStateToProps(state) {
   return {
     isActive: state.activity.isActive,
@@ -91,8 +93,10 @@ class ActivityDetectorContainer extends Component {
   }
 
   render() {
+    const className = this.props.isActive ? style.ActiveContainer : style.InactiveContainer;
+
     return (
-      <div ref={(c) => { this.container = c; }}>
+      <div className={className} ref={(c) => { this.container = c; }}>
         {this.props.children}
       </div>
     );
