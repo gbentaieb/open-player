@@ -1,0 +1,27 @@
+image: node:latest
+
+before_script:
+  - yarn install
+
+cache:
+  paths:
+    - node_modules/
+
+# for now, we only have a test stage, but later,
+# it will be nice to have automatic deployment thanks to gitlac-ci
+# TODO: add auto deploy
+stages:
+  - test
+
+test:lint:
+  stage: test
+  script:
+    - yarn run lint
+
+test:unit:
+  stage: test
+  script:
+    - yarn run test --coverage
+  artifacts:
+    paths:
+      - coverage/
