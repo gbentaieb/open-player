@@ -45,7 +45,6 @@
     "identity-obj-proxy": "^3.0.0",
     "install": "^0.12.2",
     "jest": "^23.6.0",
-    "jest-mock": "^23.2.0",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
@@ -158,6 +157,7 @@
       "mount": true,
       "OpenPlayer": true,
       "__DEV__": true,
+      "jest": true,
       "describe": true,
       "beforeEach": true,
       "afterEach": true

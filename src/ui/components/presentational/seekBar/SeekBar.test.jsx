@@ -1,5 +1,4 @@
 import React from 'react';
-import jest from 'jest-mock';
 import { SeekBar } from './SeekBar';
 
 const defaultProps = {

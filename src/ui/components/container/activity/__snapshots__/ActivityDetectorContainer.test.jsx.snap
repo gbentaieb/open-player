@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ControlsContainer ControlsContainer > Snapshot 1`] = `
-<ControlsContainer
-  dispatch={[Function]}
+exports[`ActivityDetectorContainer ActivityDetectorContainer > Snapshot 1`] = `
+<ActivityDetectorContainer
   isActive={false}
+  setIsActive={[Function]}
   store={
     Object {
       "dispatch": [Function],

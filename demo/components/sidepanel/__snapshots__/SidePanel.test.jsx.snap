@@ -102,6 +102,14 @@ exports[`test demo sidepanel SidePanel > Snapshot 1`] = `
         primary="Pause"
       />
     </WithStyles(ListItem)>
+    <WithStyles(ListItem)
+      button={true}
+      onClick={[Function]}
+    >
+      <WithStyles(ListItemText)
+        primary="Destroy"
+      />
+    </WithStyles(ListItem)>
     <WithStyles(Divider) />
     <WithStyles(ListItem)
       button={true}

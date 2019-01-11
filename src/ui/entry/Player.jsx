@@ -12,6 +12,7 @@ import ControlsContainer from '../components/container/controlscontainer/Control
 import style from './Player.css';
 import SpinnerContainer from '../components/container/spinner/SpinnerContainer';
 import FullscreenContainer from '../components/container/fullscreen/FullscreenContainer';
+import ActivityDetectorContainer from '../components/container/activity/ActivityDetectorContainer';
 
 const defaultTheme = createMuiTheme({
   typography: {
@@ -77,7 +78,7 @@ class Player extends Component {
     return (
       <MuiThemeProvider theme={this.state.theme}>
         <FullscreenContainer >
-          <div>
+          <ActivityDetectorContainer>
             <div className={style.ControlsWrapper}>
               <ControlsContainer />
             </div>
@@ -87,7 +88,7 @@ class Player extends Component {
             <div className={style.SpinnerWrapper}>
               <SpinnerContainer />
             </div>
-          </div>
+          </ActivityDetectorContainer>
         </FullscreenContainer>
       </MuiThemeProvider>
     );

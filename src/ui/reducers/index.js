@@ -2,3 +2,4 @@
 export { default as core } from './core';
 export { default as config } from './config';
 export { default as fullscreen } from './fullscreen';
+export { default as activity } from './activity';

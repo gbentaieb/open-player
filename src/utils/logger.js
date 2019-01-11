@@ -18,7 +18,6 @@ class Logger {
 
   static get instance() {
     if (!this.singleton) {
-      console.debug('Logger > new instance');
       this.singleton = new Logger();
     }
 
