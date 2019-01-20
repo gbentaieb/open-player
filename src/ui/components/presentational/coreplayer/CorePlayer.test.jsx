@@ -6,8 +6,10 @@ const defaultProps = {
   RxPlayer: FakeRxPlayer,
   videoElement: document.createElement('video'),
   playRequested: true,
+  forcedMuted: false,
   setPlayerState: () => {},
   setPlayerTimes: () => {},
+  setForcedMuted: () => {},
 };
 
 describe('CorePlayer snapshot', () => {
@@ -55,6 +57,14 @@ describe('CorePlayer react cycle', () => {
     expect(instance.rxPlayer.seekTo).toHaveBeenCalledWith(seekingTime);
   });
 
+  test('CorePlayer > componentWillReceiveProps > forcedMuted', () => {
+    const forcedMuted = true;
+    const wrapper = mount(<CorePlayer {...defaultProps} />);
+    const instance = wrapper.instance();
+    wrapper.setProps({ forcedMuted });
+    expect(instance.props.videoElement.muted).toEqual(forcedMuted);
+  });
+
   test('CorePlayer > componentWillReceiveProps > playRequested false', () => {
     const playRequested = false;
     const wrapper = mount(<CorePlayer {...defaultProps} />);
@@ -80,7 +90,7 @@ describe('CorePlayer methods', () => {
     const result = {
       url,
       transport: 'dash',
-      autoPlay: true,
+      autoPlay: false,
     };
 
     const wrapper = mount(<CorePlayer {...defaultProps} />);

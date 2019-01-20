@@ -3,8 +3,10 @@
 exports[`CorePlayer snapshot CorePlayer > Snapshot 1`] = `
 <CorePlayer
   RxPlayer={[Function]}
+  forcedMuted={false}
   playRequested={true}
   seekingTime={0}
+  setForcedMuted={[Function]}
   setPlayerState={[Function]}
   setPlayerTimes={[Function]}
   url=""

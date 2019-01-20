@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './CorePlayer.css';
+import logger from '../../../../utils/logger';
+import { LOADED } from '../../../constants/CoreStates';
 
 class CorePlayer extends Component {
   static propTypes = {
@@ -10,7 +12,9 @@ class CorePlayer extends Component {
     playRequested: PropTypes.bool.isRequired,
     setPlayerState: PropTypes.func.isRequired,
     setPlayerTimes: PropTypes.func.isRequired,
+    setForcedMuted: PropTypes.func.isRequired,
     seekingTime: PropTypes.number,
+    forcedMuted: PropTypes.bool.isRequired,
   }
 
   static defaultProps = {
@@ -58,6 +62,10 @@ class CorePlayer extends Component {
     if (nextProps.seekingTime !== this.props.seekingTime) {
       this.rxPlayer.seekTo(nextProps.seekingTime);
     }
+
+    if (nextProps.forcedMuted !== this.props.forcedMuted) {
+      this.props.videoElement.muted = nextProps.forcedMuted;
+    }
   }
 
   componentWillUnmount() {
@@ -65,8 +73,17 @@ class CorePlayer extends Component {
     this.rxPlayer.dispose();
   }
 
-  onPlayerStateChange(event) {
+  async onPlayerStateChange(event) {
     this.props.setPlayerState(event);
+
+    if (event === LOADED) {
+      try {
+        await this.rxPlayer.play();
+      } catch (e) {
+        this.props.setForcedMuted(true);
+        logger.warn('Open Player > core > could not autoplay', e);
+      }
+    }
   }
 
   onPositionUpdate({ position, duration, liveGap }) {
@@ -87,7 +104,7 @@ class CorePlayer extends Component {
     {
       url,
       transport: 'dash',
-      autoPlay: true,
+      autoPlay: false,
     }
   )
 

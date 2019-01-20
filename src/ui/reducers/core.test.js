@@ -14,6 +14,7 @@ describe('test config reducer', () => {
       startTime: 0,
       endTime: Infinity,
       seekingTime: 0,
+      forcedMuted: false,
     });
   });
 
@@ -45,5 +46,11 @@ describe('test config reducer', () => {
     expect(state.startTime).toEqual(times.startTime);
     expect(state.endTime).toEqual(times.endTime);
     expect(state.currentTime).toEqual(times.currentTime);
+  });
+
+  test('Reducers > core > SET_FORCED_MUTED', () => {
+    const forcedMuted = true;
+    const state = dispatch(types.SET_FORCED_MUTED, forcedMuted);
+    expect(state.forcedMuted).toEqual(forcedMuted);
   });
 });

@@ -33,4 +33,12 @@ describe('Core Actions', () => {
     expect(result.type).toBe(types.SET_PLAYER_TIMES);
     expect(result.payload).toBe(payload);
   });
+
+  test('Core Actions > setForcedMuted', () => {
+    const payload = true;
+    const result = actions.setForcedMuted(payload);
+
+    expect(result.type).toBe(types.SET_FORCED_MUTED);
+    expect(result.payload).toBe(payload);
+  });
 });

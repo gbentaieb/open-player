@@ -40,3 +40,13 @@ export function setPlayerTimes(times) {
     payload: times,
   };
 }
+
+/**
+ * Set if player forced muted
+ */
+export function setForcedMuted(bool) {
+  return {
+    type: types.SET_FORCED_MUTED,
+    payload: bool,
+  };
+}
