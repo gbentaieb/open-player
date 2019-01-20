@@ -1,0 +1,10 @@
+.HeaderWrapper {
+  position: absolute;
+  display: flex;
+  text-align: center;
+  top: 0;
+  padding: 5px 5px 5px 5px;
+  height: 65px;
+  width: calc(100% - 10px);
+  z-index: 10;
+}

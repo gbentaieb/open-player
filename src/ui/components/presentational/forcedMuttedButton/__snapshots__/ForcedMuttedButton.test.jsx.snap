@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForcedMuttedButton snapshot ForcedMuttedButton > Snapshot 1`] = `
+<div>
+  <WithStyles(Button)
+    Icon={[Function]}
+    onClick={[Function]}
+  />
+</div>
+`;

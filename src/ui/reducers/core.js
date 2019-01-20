@@ -7,6 +7,7 @@ const initialState = {
   startTime: 0,
   endTime: Infinity,
   seekingTime: 0,
+  forcedMuted: false,
 };
 
 export default function core(state = initialState, action) {
@@ -35,6 +36,12 @@ export default function core(state = initialState, action) {
         currentTime: action.payload.currentTime,
         startTime: action.payload.startTime,
         endTime: action.payload.endTime,
+      };
+
+    case types.SET_FORCED_MUTED:
+      return {
+        ...state,
+        forcedMuted: action.payload,
       };
 
     default:

@@ -1,0 +1,7 @@
+.ForcedMuttedButton {
+  position: relative;
+  margin-bottom: auto;
+  margin-top: auto;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
+}

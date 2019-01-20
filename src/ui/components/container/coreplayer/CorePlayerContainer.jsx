@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import RxPlayer from 'rx-player';
 import CorePlayer from '../../presentational/coreplayer/CorePlayer';
-import { setPlayerState, setPlayerTimes } from '../../../actions/CoreActions';
+import { setPlayerState, setPlayerTimes, setForcedMuted } from '../../../actions/CoreActions';
 
 export function mapStateToProps(state) {
   return {
@@ -9,6 +9,7 @@ export function mapStateToProps(state) {
     url: state.config.url,
     playRequested: state.core.playRequested,
     seekingTime: state.core.seekingTime,
+    forcedMuted: state.core.forcedMuted,
   };
 }
 
@@ -17,5 +18,6 @@ export default connect(
   {
     setPlayerState,
     setPlayerTimes,
+    setForcedMuted,
   },
 )(CorePlayer);

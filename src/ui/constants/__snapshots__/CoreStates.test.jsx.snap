@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CoreStates > Snapshot CoreStates > Snapshot 1`] = `
+Object {
+  "BUFFERING": "BUFFERING",
+  "CORE_STATES": Array [
+    "PLAYING",
+    "SEEKING",
+    "BUFFERING",
+    "STOPPED",
+    "LOADING",
+    "LOADED",
+    "ENDED",
+    "ENDED",
+  ],
+  "ENDED": "ENDED",
+  "LOADED": "LOADED",
+  "LOADING": "LOADING",
+  "PAUSED": "PAUSED",
+  "PLAYING": "PLAYING",
+  "SEEKING": "SEEKING",
+  "STOPPED": "STOPPED",
+}
+`;

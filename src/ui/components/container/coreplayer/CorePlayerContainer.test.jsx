@@ -11,6 +11,7 @@ const defaultStore = {
   },
   core: {
     playRequested: true,
+    forcedMuted: false,
   },
 };
 
@@ -30,9 +31,11 @@ describe('CorePlayerContainer', () => {
     const url = 'https://test.mpd';
     const playRequested = true;
     const seekingTime = 12;
+    const forcedMuted = false;
+
     const state = {
       config: { url },
-      core: { playRequested, seekingTime },
+      core: { playRequested, seekingTime, forcedMuted },
     };
 
     expect(mapStateToProps(state)).toEqual({
@@ -40,6 +43,7 @@ describe('CorePlayerContainer', () => {
       url,
       playRequested,
       seekingTime,
+      forcedMuted,
     });
   });
 });
